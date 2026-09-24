@@ -5,34 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Past Presenters — Science Plus</title>
   <meta name="description" content="Browse all past Science Plus speakers — scientists, diplomats, philosophers, economists, and more." />
+  <meta property="og:title" content="Past Presenters — Science Plus" />
+  <meta property="og:description" content="Browse all past Science Plus speakers — scientists, diplomats, philosophers, economists, and more." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://science-plus.ca/presenters" />
+  <meta property="og:url" content="https://science-plus.ca/presenters" />
+  <meta property="og:image" content="https://science-plus.ca/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Science Plus" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231A2744'/%3E%3Ctext x='32' y='44' font-family='Georgia, serif' font-size='30' font-weight='700' fill='%23C4923A' text-anchor='middle'%3ES%2B%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- NAV -->
 <nav class="nav">
   <div class="nav__inner">
     <a class="nav__brand" href="index.html">Science<span>+</span></a>
-    <ul class="nav__links">
+    <ul class="nav__links" id="site-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="presenters.html">Past Presenters</a></li>
-      <li><a href="moments.html">Moments</a></li>
+      <li><a href="moments.html">Quotes</a></li>
       <li><a href="archive.html">Recordings</a></li>
+      <li><a href="stats.html">By the Numbers</a></li>
       <li><a href="events.html" class="nav__cta">Upcoming Events</a></li>
     </ul>
-    <button class="nav__burger" aria-label="Menu">
+    <button class="nav__burger" aria-label="Menu" aria-controls="site-menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+
+<main id="main">
 
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header__inner">
     <span class="eyebrow">Past Presenters</span>
     <h1>The minds behind the conversations.</h1>
-    <p>Scientists, economists, diplomats, philosophers, and thinkers who have joined Ray Schachter for intimate Zoom conversations since 2020.</p>
+    <p>Scientists, mathematicians, physicians, geneticists, economists, diplomats and philosophers who have joined Ray Schachter for conversation since 2013 — around a living room until 2020, and online ever since.</p>
   </div>
 </div>
 
@@ -41,87 +60,142 @@
   <div class="container">
 
     <div class="search-wrap">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="presenterSearch" placeholder="Search by name, topic, or field…" />
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="presenterSearch" aria-label="Search presenters" placeholder="Search by name, topic, or field…" />
     </div>
 
     <div class="filter-pills">
-      <button class="pill active" data-filter="all">All</button>
-      <button class="pill" data-filter="physics">Physics</button>
-      <button class="pill" data-filter="geopolitics">Geopolitics</button>
-      <button class="pill" data-filter="neuroscience">Neuroscience</button>
-      <button class="pill" data-filter="climate">Climate &amp; Environment</button>
-      <button class="pill" data-filter="ai">AI &amp; Technology</button>
-      <button class="pill" data-filter="philosophy">Philosophy</button>
-      <button class="pill" data-filter="economics">Economics</button>
-      <button class="pill" data-filter="space">Space &amp; Planets</button>
+      <button class="pill active" data-filter="all" aria-pressed="true">All</button>
+      <button class="pill" data-filter="physics" aria-pressed="false">Physics</button>
+      <button class="pill" data-filter="mathematics" aria-pressed="false">Mathematics</button>
+      <button class="pill" data-filter="medicine" aria-pressed="false">Medicine &amp; Genomics</button>
+      <button class="pill" data-filter="biology" aria-pressed="false">Biology &amp; Evolution</button>
+      <button class="pill" data-filter="space" aria-pressed="false">Space &amp; Planets</button>
+      <button class="pill" data-filter="geopolitics" aria-pressed="false">Geopolitics</button>
+      <button class="pill" data-filter="neuroscience" aria-pressed="false">Neuroscience</button>
+      <button class="pill" data-filter="climate" aria-pressed="false">Climate &amp; Environment</button>
+      <button class="pill" data-filter="ai" aria-pressed="false">AI &amp; Technology</button>
+      <button class="pill" data-filter="philosophy" aria-pressed="false">Philosophy</button>
+      <button class="pill" data-filter="economics" aria-pressed="false">Economics</button>
     </div>
 
     <div class="presenters-grid">
 
       <!-- 2026 -->
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="mark-bernstein"
+           data-name="Mark Bernstein"
+           data-topic="Neurosurgery and Medical Ethics"
+           data-tags="medicine ethics neurosurgery surgery brain">
+        <div class="presenter-card__name">Mark Bernstein</div>
+        <div class="presenter-card__topic">Neurosurgery and Medical Ethics</div>
+        <div class="presenter-card__date">June 2026</div>
+        <div class="presenter-card__bio">A Toronto academic neurosurgeon of more than forty years, he has studied surgical error across his own 2000–2019 caseload, practised awake craniotomy, and helped build neurosurgical capacity in more than fifteen lower-income countries. His three A's for surgeons who err: acknowledge, acquire knowledge, ask forgiveness.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Ethics</span>
+          <span class="tag">Neurosurgery</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/mark-bernstein.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="lawrence-shipman"
+           data-name="Michael Lawrence &amp; Megan Shipman"
+           data-topic="Modeling a Pathway Through Global Crises to Hope"
+           data-tags="climate geopolitics complexity environment systems">
+        <div class="presenter-card__name">Michael Lawrence &amp; Megan Shipman</div>
+        <div class="presenter-card__topic">Modeling a Pathway Through Global Crises to Hope</div>
+        <div class="presenter-card__date">May 2026</div>
+        <div class="presenter-card__bio">Cascade Institute researchers who built the Polycrisis Core Model — eleven interlocking global subsystems, more than 1,800 expert causal judgments, and three probable outcomes for humanity by 2040. The model finds a self-reinforcing "Hope Attractor"; getting there is the hard part.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Complexity</span>
+          <span class="tag">Climate</span>
+          <span class="tag">Geopolitics</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/lawrence-shipman.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="annie-ciernia"
+           data-name="Annie Ciernia"
+           data-topic="Our Gut Biome and How It Influences the Brain"
+           data-tags="medicine biology neuroscience brain microbiome">
+        <div class="presenter-card__name">Annie Ciernia</div>
+        <div class="presenter-card__topic">Our Gut Biome and How It Influences the Brain</div>
+        <div class="presenter-card__date">March 2026</div>
+        <div class="presenter-card__bio">University of British Columbia Department of Biochemistry. Her team followed the communication between the microbial communities living in the gut and the brain — one of the fastest-moving frontiers in biology.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Neuroscience</span>
+          <span class="tag">Microbiome</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/annie-ciernia.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="andrew-standley"
            data-name="Andrew Standley"
            data-topic="Global Power Rivalries and the EU's Place"
            data-tags="geopolitics diplomacy eu">
         <div class="presenter-card__name">Andrew Standley</div>
-        <div class="presenter-card__topic">Global Power Rivalries and the EU's Place (or Absence?)</div>
+        <div class="presenter-card__topic">Global Power Rivalries and the European Union's Place (or, Sadly, Absence?)</div>
         <div class="presenter-card__date">February 2026</div>
-        <div class="presenter-card__bio">Former EU Ambassador to Mexico, Bolivia, and Israel. A seasoned diplomat with frontline experience of how the international order holds — and fractures — under pressure.</div>
+        <div class="presenter-card__bio">A thirty-year career with the European Union — postings in India, China, Pakistan, Costa Rica and Brussels, then EU Ambassador in Bolivia, Israel and Mexico. A seasoned diplomat with frontline experience of how the international order holds, and fractures, under pressure.</div>
         <div class="presenter-card__tags">
           <span class="tag">Geopolitics</span>
           <span class="tag">Diplomacy</span>
           <span class="tag">EU</span>
         </div>
+        <a class="presenter-card__link" href="sessions/andrew-standley.html">Read the full session &rarr;</a>
       </div>
 
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="graziella-caprarelli"
            data-name="Graziella Caprarelli"
            data-topic="Water and Life on Mars"
            data-tags="space planets mars science">
         <div class="presenter-card__name">Graziella Caprarelli</div>
         <div class="presenter-card__topic">Water and Life on Mars</div>
         <div class="presenter-card__date">January 2026</div>
-        <div class="presenter-card__bio">University of Southern Queensland. Planetary geologist studying the geological and hydrological history of Mars — and what it means for the possibility of past or present life.</div>
+        <div class="presenter-card__bio">University of Southern Queensland School of Sciences. A planetary scientist whose work on Mars Express radar data pointed to bodies of liquid water beneath the Martian surface — and to what that might mean for life.</div>
         <div class="presenter-card__tags">
           <span class="tag">Space</span>
           <span class="tag">Planets</span>
           <span class="tag">Mars</span>
         </div>
+        <a class="presenter-card__link" href="sessions/graziella-caprarelli.html">Read the full session &rarr;</a>
       </div>
 
       <!-- 2025 -->
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="bianca-dittrich"
            data-name="Bianca Dittrich"
            data-topic="Theory of Everything"
-           data-tags="physics quantum loop quantum gravity theory">
+           data-tags="physics quantum loop gravity theory">
         <div class="presenter-card__name">Bianca Dittrich</div>
         <div class="presenter-card__topic">The Theory of Everything: The Most Intractable Problem in Physics</div>
         <div class="presenter-card__date">December 2025</div>
-        <div class="presenter-card__bio">Perimeter Institute for Theoretical Physics. A leading researcher in loop quantum gravity, working on one of the deepest unsolved problems in all of science: unifying general relativity and quantum mechanics.</div>
+        <div class="presenter-card__bio">Perimeter Institute for Theoretical Physics; Max Planck Institute for Gravitational Physics, 2011&ndash;14. She leads a team at Perimeter working on loop quantum gravity — one attempt at the deepest unsolved problem in science, unifying general relativity with quantum mechanics.</div>
         <div class="presenter-card__tags">
           <span class="tag">Physics</span>
           <span class="tag">Quantum</span>
           <span class="tag">Theory of Everything</span>
         </div>
+        <a class="presenter-card__link" href="sessions/bianca-dittrich.html">Read the full session &rarr;</a>
       </div>
 
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="robert-raussendorf"
            data-name="Robert Raussendorf"
-           data-topic="Quantum Computers"
-           data-tags="physics quantum computing technology">
+           data-topic="Quantum Computers and Cryptography"
+           data-tags="physics quantum computing technology ai">
         <div class="presenter-card__name">Robert Raussendorf</div>
-        <div class="presenter-card__topic">Quantum Computers: Developments, Promises and Hopes</div>
-        <div class="presenter-card__date">October 2025</div>
-        <div class="presenter-card__bio">UBC / Leibniz University Hannover. 2023 Humboldt Prize winner. A foundational figure in quantum computing, known for pioneering the measurement-based model of quantum computation.</div>
+        <div class="presenter-card__topic">Quantum Computers and Cryptography</div>
+        <div class="presenter-card__date">October 2025 — also December 2014</div>
+        <div class="presenter-card__bio">Institute for Theoretical Physics, Leibniz University Hannover, and previously at the University of British Columbia and Perimeter Institute. A quantum computing theorist who gave one of the series' earliest science talks in 2014 and returned eleven years later to explain what quantum machines will do to cryptography.</div>
         <div class="presenter-card__tags">
           <span class="tag">Physics</span>
           <span class="tag">Quantum</span>
-          <span class="tag">AI &amp; Technology</span>
+          <span class="tag">Computing</span>
         </div>
+        <a class="presenter-card__link" href="sessions/robert-raussendorf.html">Read the full session &rarr;</a>
       </div>
 
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="mark-jellinek"
            data-name="Mark Jellinek"
            data-topic="Volcanoes and Wildfires"
            data-tags="climate environment science volcanology">
@@ -134,70 +208,585 @@
           <span class="tag">Environment</span>
           <span class="tag">Science</span>
         </div>
+        <a class="presenter-card__link" href="sessions/mark-jellinek.html">Read the full session &rarr;</a>
       </div>
 
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="janice-stein"
+           data-name="Janice Stein"
+           data-topic="Putin and World Politics"
+           data-tags="geopolitics international relations politics russia">
+        <div class="presenter-card__name">Janice Stein</div>
+        <div class="presenter-card__topic">Putin and World Politics</div>
+        <div class="presenter-card__date">June 2025</div>
+        <div class="presenter-card__bio">Founding Director, Munk School of Global Affairs &amp; Public Policy, University of Toronto. A Fellow of the Royal Society of Canada and a member of the Order of Canada, and one of the country's most-heard voices on international negotiation and war.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Geopolitics</span>
+          <span class="tag">International Relations</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/janice-stein.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="william-merrill"
            data-name="William Merrill"
            data-topic="Large Language Models"
            data-tags="ai technology llm machine learning">
         <div class="presenter-card__name">William Merrill</div>
         <div class="presenter-card__topic">Large Language Models: Capabilities and Limitations</div>
         <div class="presenter-card__date">May 2025</div>
-        <div class="presenter-card__bio">AI researcher working on the theoretical foundations of large language models — what they can do, what they can't, and why the distinction matters for how we integrate them into society.</div>
+        <div class="presenter-card__bio">New York University. Will is an AI researcher working on the theoretical foundations of large language models — what they can do, what they can't, what they must not do, and why the distinctions matter for how we integrate them into society.</div>
         <div class="presenter-card__tags">
           <span class="tag">AI &amp; Technology</span>
           <span class="tag">LLMs</span>
         </div>
+        <a class="presenter-card__link" href="sessions/william-merrill.html">Read the full session &rarr;</a>
       </div>
 
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="daniel-schensul"
            data-name="Daniel Schensul"
-           data-topic="Political Economy of Climate"
-           data-tags="climate economics environment">
+           data-topic="From the UN Climate Action Team to the Bezos Earth Fund"
+           data-tags="climate economics environment development">
         <div class="presenter-card__name">Daniel Schensul</div>
-        <div class="presenter-card__topic">The Political Economy of Climate (in)Action, or How I Ended Up Working for Jeff Bezos</div>
+        <div class="presenter-card__topic">From the UN Climate Action Team to the Bezos Earth Fund: Lessons Learned and Hope for the Future</div>
         <div class="presenter-card__date">February 2025</div>
-        <div class="presenter-card__bio">A policy expert and researcher who has navigated the intersection of climate science, political economy, and the private sector — with candour about what that navigation actually looks like.</div>
+        <div class="presenter-card__bio">Advisor for Sustainable Economic Development at the Bezos Earth Fund, after fourteen years at the United Nations — most recently with the Climate Action Team in the Executive Office of the Secretary-General. He leads the Fund's work on forest-protecting economies in the Brazilian Amazon and the Democratic Republic of the Congo (DRC).</div>
         <div class="presenter-card__tags">
           <span class="tag">Climate</span>
           <span class="tag">Economics</span>
           <span class="tag">Environment</span>
         </div>
+        <a class="presenter-card__link" href="sessions/daniel-schensul.html">Read the full session &rarr;</a>
       </div>
 
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="aurel-braun"
            data-name="Aurel Braun"
-           data-topic="Ukraine and International Peace"
+           data-topic="The War in Ukraine and International Peace"
            data-tags="geopolitics ukraine war international relations">
         <div class="presenter-card__name">Aurel Braun</div>
         <div class="presenter-card__topic">The War in Ukraine and International Peace?</div>
         <div class="presenter-card__date">January 2025</div>
-        <div class="presenter-card__bio">Political scientist and international relations scholar with deep expertise in Eastern European security, Russian foreign policy, and the fragility of the post-Cold War order.</div>
+        <div class="presenter-card__bio">Professor of International Relations, University of Toronto. An expert on the history of the war in Ukraine and on what it is doing to the wider geopolitical order.</div>
         <div class="presenter-card__tags">
           <span class="tag">Geopolitics</span>
           <span class="tag">Ukraine</span>
           <span class="tag">International Relations</span>
         </div>
+        <a class="presenter-card__link" href="sessions/aurel-braun.html">Read the full session &rarr;</a>
       </div>
 
       <!-- 2024 -->
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="tom-lin"
            data-name="Tom Lin"
-           data-topic="Science Journalism"
+           data-topic="Quanta Magazine and Science Journalism"
            data-tags="science journalism media quanta">
         <div class="presenter-card__name">Tom Lin</div>
-        <div class="presenter-card__topic">Science Journalism and the Public Understanding of Science</div>
+        <div class="presenter-card__topic">Quanta Magazine, "the Greatest Thing to Happen to Science Journalism in Years", and the Simons Foundation</div>
         <div class="presenter-card__date">December 2024</div>
-        <div class="presenter-card__bio">Quanta Magazine / Simons Foundation. A leading science journalist and editor who has helped define how complex mathematics and physics are communicated to general audiences.</div>
+        <div class="presenter-card__bio">Founding editor-in-chief of Quanta Magazine from 2012 to 2024, and before that digital editor of science and national news at the New York Times. The Nobel laureate David Gross called Quanta "the greatest thing to happen to science journalism in many years."</div>
         <div class="presenter-card__tags">
           <span class="tag">Science</span>
           <span class="tag">Journalism</span>
           <span class="tag">Media</span>
         </div>
+        <a class="presenter-card__link" href="sessions/tom-lin.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="amy-kurzweil"
+           data-name="Amy Kurzweil"
+           data-topic="Artificial: A Love Story"
+           data-tags="ai technology art memory literature">
+        <div class="presenter-card__name">Amy Kurzweil</div>
+        <div class="presenter-card__topic">"Artificial: A Love Story" — AI, History and Existential Meaning</div>
+        <div class="presenter-card__date">November 2024</div>
+        <div class="presenter-card__bio">New Yorker cartoonist and author of <em>Flying Couch</em> and <em>Artificial: A Love Story</em>, a hand-drawn memoir about her father Ray Kurzweil building a chatbot in the voice of his own late father. "Love, a process of focused attention, is what grounds a meaningful life."</div>
+        <div class="presenter-card__tags">
+          <span class="tag">AI &amp; Technology</span>
+          <span class="tag">Memory</span>
+          <span class="tag">Art</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/amy-kurzweil.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="tim-maudlin"
+           data-name="Tim Maudlin"
+           data-topic="Philosophy of Physics"
+           data-tags="philosophy physics quantum foundations">
+        <div class="presenter-card__name">Tim Maudlin</div>
+        <div class="presenter-card__topic">The Challenges of Quantum Physics — and Is Schrödinger's Cat Dead or Alive?</div>
+        <div class="presenter-card__date">October 2024</div>
+        <div class="presenter-card__bio">New York University. Philosopher of physics, founder and director of the John Bell Institute for the Foundations of Physics, and a Guggenheim Fellow — asking the questions physicists sometimes find it easier to set aside.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Philosophy</span>
+          <span class="tag">Physics</span>
+          <span class="tag">Quantum</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/tim-maudlin.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="kumar-murty"
+           data-name="Kumar Murty"
+           data-topic="The Science of Human Possibilities"
+           data-tags="mathematics education teaching science">
+        <div class="presenter-card__name">Kumar Murty</div>
+        <div class="presenter-card__topic">The Science of Human Possibilities</div>
+        <div class="presenter-card__date">September 2024</div>
+        <div class="presenter-card__bio">Department of Mathematics, University of Toronto, and until 2024 director of the Fields Institute. A Fellow of the Royal Society of Canada. Kumar's session describing why so many people fear mathematics and how mentoring unlocks what people are capable of was deliberately non-technical.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Mathematics</span>
+          <span class="tag">Education</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/kumar-murty.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="howard-feldman"
+           data-name="Howard Feldman"
+           data-topic="The Dawn of the Era of Disease Modification in Alzheimer's Disease"
+           data-tags="medicine neuroscience alzheimers brain aging">
+        <div class="presenter-card__name">Howard Feldman</div>
+        <div class="presenter-card__topic">The Dawn of the Era of Disease Modification in Alzheimer's Disease</div>
+        <div class="presenter-card__date">June 2024 — also 2015</div>
+        <div class="presenter-card__bio">Professor of neurosciences at UC San Diego and director of the Alzheimer's Disease Cooperative Study; previously Executive Associate Dean for Research in UBC's Faculty of Medicine. He contributed to the discovery of the progranulin and C9ORF72 mutations behind frontotemporal dementia. This was Howard's second presentation at Science Plus.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Neuroscience</span>
+          <span class="tag">Alzheimer's</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/howard-feldman.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="david-kanter"
+           data-name="David Kanter"
+           data-topic="Nitrogen Pollution, Food Security and Sustainable Development"
+           data-tags="climate environment agriculture food">
+        <div class="presenter-card__name">David Kanter</div>
+        <div class="presenter-card__topic">Nitrogen Pollution: Food Security and Sustainable Development</div>
+        <div class="presenter-card__date">May 2024</div>
+        <div class="presenter-card__bio">Professor of Environmental Studies, New York University. David's expertise is in nitrogen — the fertilizer that feeds the world and is also the pollutant that runs into its water and air, and the difficulty of having one without the other.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Climate</span>
+          <span class="tag">Environment</span>
+          <span class="tag">Food</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/david-kanter.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="jacob-shapiro"
+           data-name="Jacob Shapiro"
+           data-topic="The Renewed Multipolar Geopolitical World"
+           data-tags="geopolitics politics security international">
+        <div class="presenter-card__name">Jacob Shapiro</div>
+        <div class="presenter-card__topic">The Renewed Multipolar Geopolitical World</div>
+        <div class="presenter-card__date">February 2024</div>
+        <div class="presenter-card__bio">A geopolitical analyst who walked Science Plus through the return of a multipolar world — how power is redistributing among rival states, and what that leaves for everyone caught in between.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Geopolitics</span>
+          <span class="tag">Politics</span>
+          <span class="tag">Security</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/jacob-shapiro.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="alfred-amruth"
+           data-name="Amruth Alfred"
+           data-topic="Using Nature's Cosmic Telescopes to Unveil Dark Matter"
+           data-tags="physics space cosmology dark matter astronomy">
+        <div class="presenter-card__name">Amruth Alfred</div>
+        <div class="presenter-card__topic">Using Nature's Cosmic Telescopes to Unveil Dark Matter</div>
+        <div class="presenter-card__date">January 2024</div>
+        <div class="presenter-card__bio">University of Hong Kong and winner of the 2023 Hong Kong Young Scientist Award. His cover story in <em>Nature</em> showcases how Amruth used gravitational lensing to support that dark matter is not made of ultramassive particles at all, but of particles so light they travel through space like waves.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Cosmology</span>
+          <span class="tag">Dark Matter</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/alfred-amruth.html">Read the full session &rarr;</a>
+      </div>
+
+      <!-- 2023 -->
+      <div class="presenter-card fade-in" id="james-dunlop"
+           data-name="James Dunlop"
+           data-topic="Brookhaven and the Primordial Soup"
+           data-tags="physics nuclear particle cosmology">
+        <div class="presenter-card__name">James Dunlop</div>
+        <div class="presenter-card__topic">Brookhaven National Laboratory and the Primordial Soup</div>
+        <div class="presenter-card__date">November 2023</div>
+        <div class="presenter-card__bio">Associate Chair for Nuclear Physics at Brookhaven National Laboratory, where he runs the experiments at the Relativistic Heavy Ion Collider — a machine that recreates the quark-gluon plasma at 250 million degrees, the state of the universe trillionths of a second after the Big Bang.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Nuclear</span>
+          <span class="tag">Particle Physics</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/james-dunlop.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="viktor-toth"
+           data-name="Viktor T. Toth"
+           data-topic="A Life in Engineering and Physics"
+           data-tags="physics cosmology quantum engineering">
+        <div class="presenter-card__name">Viktor T. Toth</div>
+        <div class="presenter-card__topic">An Extraordinary Life in Engineering and Physics (and Ask Him Anything)</div>
+        <div class="presenter-card__date">September 2023</div>
+        <div class="presenter-card__bio">Viktor posts frequently on Quora, answering profound questions on quantum mechanics and cosmology. This session was an open evening rather than a lecture: the room asked, and he answered, on Hawking radiation, singularities and the cosmological constant.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Cosmology</span>
+          <span class="tag">Engineering</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/viktor-toth.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="jesse-shapiro"
+           data-name="B. Jesse Shapiro"
+           data-topic="SARS-CoV-2 Transmission and Adaptation to Different Animal Species"
+           data-tags="medicine biology genomics covid microbiology">
+        <div class="presenter-card__name">B. Jesse Shapiro</div>
+        <div class="presenter-card__topic">SARS-CoV-2 Transmission and Adaptation to Different Animal Species</div>
+        <div class="presenter-card__date">May 2023</div>
+        <div class="presenter-card__bio">Associate Professor, Department of Microbiology &amp; Immunology, McGill University. Jesse's lab uses genomics to trace the ecology and evolution of microbes — including how SARS-CoV-2 moved between animals and humans such as mink and deer, and back again.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Genomics</span>
+          <span class="tag">Microbiology</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/jesse-shapiro.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="annabel-beichman"
+           data-name="Annabel Beichman"
+           data-topic="Genomes of Endangered Marine Mammals"
+           data-tags="medicine biology genomics conservation evolution">
+        <div class="presenter-card__name">Annabel Beichman</div>
+        <div class="presenter-card__topic">How Genomes of Endangered Marine Mammals Provide Insights Into Their (and Our) Evolution and Survival</div>
+        <div class="presenter-card__date">March 2023</div>
+        <div class="presenter-card__bio">A postdoctoral researcher in Kelley Harris's lab at University of Washington Genome Sciences, using genomics to read mutations and demographic history in sea otters, bears and whales — species whose genomes still carry the imprint of the fur trade and of whaling. Daughter of 2022 presenter Charles Beichman.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Genomics</span>
+          <span class="tag">Evolution</span>
+          <span class="tag">Conservation</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/2023-03-28-annabel-beichman.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="michelle-kunimoto"
+           data-name="Michelle Kunimoto"
+           data-topic="Exoplanets"
+           data-tags="space planets exoplanets astronomy">
+        <div class="presenter-card__name">Michelle Kunimoto</div>
+        <div class="presenter-card__topic">Exoplanets</div>
+        <div class="presenter-card__date">February 2023</div>
+        <div class="presenter-card__bio">Assistant Professor in the UBC Department of Physics and Astronomy, formerly at MIT, working on NASA's TESS mission — the survey that watches for the faint dimming of a star as an unseen planet crosses in front of it. She has identified many thousands of exoplanets.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Space</span>
+          <span class="tag">Exoplanets</span>
+          <span class="tag">Astronomy</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/michelle-kunimoto.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="neil-shubin"
+           data-name="Neil Shubin"
+           data-topic="Your Inner Fish"
+           data-tags="biology evolution paleontology anatomy">
+        <div class="presenter-card__name">Neil Shubin</div>
+        <div class="presenter-card__topic">Your Inner Fish: A Journey Into the 3.5-Billion-Year History of the Human Body</div>
+        <div class="presenter-card__date">January 2023</div>
+        <div class="presenter-card__bio">Robert R. Bensley Distinguished Service Professor of Anatomy at the University of Chicago. Paleontologist, co-discoverer of Tiktaalik — the "fish with hands" — and author of the national bestseller that gives the session its name.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Biology</span>
+          <span class="tag">Evolution</span>
+          <span class="tag">Paleontology</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/neil-shubin.html">Read the full session &rarr;</a>
+      </div>
+
+      <!-- 2022 -->
+      <div class="presenter-card fade-in" id="michael-hayden"
+           data-name="Michael Hayden"
+           data-topic="Huntington's Disease: No Diseases Are Hopeless Anymore"
+           data-tags="medicine genomics genetics huntingtons therapy">
+        <div class="presenter-card__name">Michael Hayden</div>
+        <div class="presenter-card__topic">No Diseases Are Hopeless Anymore: Huntington's Disease</div>
+        <div class="presenter-card__date">December 2022</div>
+        <div class="presenter-card__bio">University of British Columbia, Centre for Molecular Medicine and Therapeutics. A world authority on the genetics of Huntington's disease and on turning that genetic understanding into therapy; his early work looked at the outliers — people with extreme or highly unusual conditions — to learn what causes disease.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Genomics</span>
+          <span class="tag">Genetics</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/michael-hayden.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="binyamin-appelbaum"
+           data-name="Binyamin Appelbaum"
+           data-topic="The Economists' Hour"
+           data-tags="economics politics journalism inflation">
+        <div class="presenter-card__name">Binyamin Appelbaum</div>
+        <div class="presenter-card__topic">The Economists' Hour: Ideology and Inflation</div>
+        <div class="presenter-card__date">November 2022</div>
+        <div class="presenter-card__bio">New York Times journalist and author of <em>The Economists' Hour</em>, on how economists came to hold such sway over public policy — and what that has meant for inflation, markets and ordinary life.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Economics</span>
+          <span class="tag">Politics</span>
+          <span class="tag">Journalism</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/binyamin-appelbaum.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="michel-laberge"
+           data-name="Michel Laberge"
+           data-topic="New Developments at General Fusion"
+           data-tags="physics energy fusion climate technology">
+        <div class="presenter-card__name">Michel Laberge</div>
+        <div class="presenter-card__topic">Fusion, Unlimited Renewable Energy, and General Fusion</div>
+        <div class="presenter-card__date">September 2022</div>
+        <div class="presenter-card__bio">Physicist and founder of General Fusion, Burnaby, BC, now a public company with a major facility in Britain. The session traced the company from concept and described the wider global race for commercial fusion power — a field where, as one participant put it, "fusion power is always 40 years in the future no matter when you ask the question."</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Energy</span>
+          <span class="tag">Fusion</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/michel-laberge.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="rebecca-goldstein"
+           data-name="Rebecca Goldstein"
+           data-topic="The Drive Which Propels Us / Plato at the Googleplex"
+           data-tags="philosophy ethics literature ideas">
+        <div class="presenter-card__name">Rebecca Goldstein</div>
+        <div class="presenter-card__topic">The Drive Which Propels Us</div>
+        <div class="presenter-card__date">June 2022</div>
+        <div class="presenter-card__bio">Philosopher and author, who spoke to Science Plus on her highly acclaimed book <em>Plato at the Googleplex</em> and on the drive that propels us — why human beings want to matter.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Philosophy</span>
+          <span class="tag">Ethics</span>
+          <span class="tag">Ideas</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/rebecca-goldstein.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="anthony-bossis"
+           data-name="Anthony Bossis"
+           data-topic="Psilocybin and Psychedelics in End-of-Life Care"
+           data-tags="medicine neuroscience psychedelics psychiatry">
+        <div class="presenter-card__name">Anthony Bossis</div>
+        <div class="presenter-card__topic">Psilocybin and Psychedelics in End-of-Life Care</div>
+        <div class="presenter-card__date">March 2022</div>
+        <div class="presenter-card__bio">Professor at New York University. His research studies the use of psilocybin for the care of people facing the end of life — among the most closely watched work in clinical psychedelics.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Psychedelics</span>
+          <span class="tag">Psychiatry</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/anthony-bossis.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="charles-beichman"
+           data-name="Charles Beichman"
+           data-topic="The James Webb Space Telescope"
+           data-tags="space astronomy telescope jwst exoplanets">
+        <div class="presenter-card__name">Charles Beichman</div>
+        <div class="presenter-card__topic">The James Webb Space Telescope</div>
+        <div class="presenter-card__date">February 2022</div>
+        <div class="presenter-card__bio">Caltech, and executive director of the NASA Exoplanet Science Institute. He walked Science Plus through JWST weeks after its launch — including its deployment, the data it would gather, and how many ways its mirror segments could have failed. Father of 2023 presenter Annabel Beichman.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Space</span>
+          <span class="tag">Astronomy</span>
+          <span class="tag">JWST</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/charles-beichman.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="robert-weir"
+           data-name="Robert Weir"
+           data-topic="Shakespeare's Library"
+           data-tags="humanities literature history shakespeare">
+        <div class="presenter-card__name">Robert Weir</div>
+        <div class="presenter-card__topic">Shakespeare's Library</div>
+        <div class="presenter-card__date">January 2022</div>
+        <div class="presenter-card__bio">A session on Shakespeare's library — what the playwright read, and what those sources tell us about how the plays came to be made.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Humanities</span>
+          <span class="tag">Literature</span>
+          <span class="tag">History</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/robert-weir.html">Read the full session &rarr;</a>
+      </div>
+
+      <!-- 2021 -->
+      <div class="presenter-card fade-in" id="alexei-kojevnikov"
+           data-name="Alexei Kojevnikov"
+           data-topic="George Gamow and Mr Tompkins"
+           data-tags="physics history science biography">
+        <div class="presenter-card__name">Alexei Kojevnikov</div>
+        <div class="presenter-card__topic">George Gamow and Mr Tompkins</div>
+        <div class="presenter-card__date">November 2021</div>
+        <div class="presenter-card__bio">A historian of physics who has studied and written about the life of George Gamow — the physicist behind Big Bang cosmology, and the author of the Mr Tompkins books that taught relativity and quantum theory to a generation of general readers.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">History of Science</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/alexei-kojevnikov.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="neil-turok"
+           data-name="Neil Turok"
+           data-topic="Cosmology and the Big Bang"
+           data-tags="physics mathematics cosmology quantum universe space">
+        <div class="presenter-card__name">Neil Turok</div>
+        <div class="presenter-card__topic">Cosmology, the Big Bang &amp; the Shape of the Universe</div>
+        <div class="presenter-card__date">October 2021</div>
+        <div class="presenter-card__bio">Director, Perimeter Institute for Theoretical Physics. A cosmologist and theoretical physicist whose Science Plus session ranged from his personal history to his theoretical work on the Big Bang, the shape of the universe, and his major contributions to science and mathematics in Africa.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Cosmology</span>
+          <span class="tag">Quantum</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/neil-turok.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="michael-rachlis"
+           data-name="Michael Rachlis"
+           data-topic="Canadian Medicare"
+           data-tags="medicine health policy canada">
+        <div class="presenter-card__name">Michael Rachlis</div>
+        <div class="presenter-card__topic">Canadian Medicare</div>
+        <div class="presenter-card__date">June 2021</div>
+        <div class="presenter-card__bio">A physician who is a Canadian authority and author on the Canadian medicare system — where the system came from, what it does well, and what it keeps failing to fix.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Health Policy</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/michael-rachlis.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="ludovic-van-waerbeke"
+           data-name="Ludovic Van Waerbeke"
+           data-topic="Dark Matter"
+           data-tags="physics cosmology space dark matter">
+        <div class="presenter-card__name">Ludovic Van Waerbeke</div>
+        <div class="presenter-card__topic">Dark Matter</div>
+        <div class="presenter-card__date">April 2021</div>
+        <div class="presenter-card__bio">Professor, University of British Columbia Department of Physics and Astronomy. Ludo presented his work on dark matter — the invisible mass that outweighs everything we can actually see. One guest wrote afterwards that "it has opened our eyes to cosmology."</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Cosmology</span>
+          <span class="tag">Dark Matter</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/ludovic-van-waerbeke.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="markus-volter"
+           data-name="Markus Völter"
+           data-topic="The Omega Tau Podcast"
+           data-tags="science engineering media podcast technology">
+        <div class="presenter-card__name">Markus Völter</div>
+        <div class="presenter-card__topic">The Omega Tau Podcast</div>
+        <div class="presenter-card__date">March 2021</div>
+        <div class="presenter-card__bio">Markus created Omega Tau, hosting more than 400 comprehensive podcasts entitled &ldquo;Science and Engineering in Your Headphones,&rdquo; with scientists and engineers conversing on how things actually work — and on what it takes to make technical subjects accessible.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Science</span>
+          <span class="tag">Engineering</span>
+          <span class="tag">Media</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/markus-volter.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="catherine-johnson"
+           data-name="Catherine Johnson"
+           data-topic="OSIRIS-REx"
+           data-tags="space planets asteroid mission astronomy">
+        <div class="presenter-card__name">Catherine Johnson</div>
+        <div class="presenter-card__topic">OSIRIS-REx: Touching an Asteroid</div>
+        <div class="presenter-card__date">February 2021</div>
+        <div class="presenter-card__bio">Professor of Geophysics, University of British Columbia. A planetary scientist who worked with the NASA team on the OSIRIS-REx mission, which flew to an asteroid and brought a piece of it home. One guest wrote that his seven-year-old daughter "now has a new hero."</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Space</span>
+          <span class="tag">Planets</span>
+          <span class="tag">Missions</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/catherine-johnson.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="thomas-homer-dixon"
+           data-name="Thomas Homer-Dixon"
+           data-topic="Commanding Hope"
+           data-tags="climate geopolitics complexity environment">
+        <div class="presenter-card__name">Thomas Homer-Dixon</div>
+        <div class="presenter-card__topic">Commanding Hope: The Power We Have to Renew a World in Peril</div>
+        <div class="presenter-card__date">January 2021</div>
+        <div class="presenter-card__bio">Founder of the Cascade Institute and author of <em>Commanding Hope</em>. A scholar of how environmental stress, social complexity and geopolitical instability interact to produce cascading crises — and of what hope can honestly be built on.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Climate</span>
+          <span class="tag">Geopolitics</span>
+          <span class="tag">Complexity</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/thomas-homer-dixon.html">Read the full session &rarr;</a>
       </div>
 
       <!-- 2020 -->
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="marco-marra"
+           data-name="Marco Marra"
+           data-topic="Genome Science and the Personalized OncoGenomics (POG) Project"
+           data-tags="medicine genomics cancer genetics biology">
+        <div class="presenter-card__name">Marco Marra</div>
+        <div class="presenter-card__topic">Genome Science, and the BC Cancer Agency Personalized OncoGenomics (POG) Project</div>
+        <div class="presenter-card__date">November 2020 — also May 2017</div>
+        <div class="presenter-card__bio">Director of the BC Cancer Agency Genome Sciences Centre and UBC Canada Research Chair in Genome Science; his team sequenced the SARS coronavirus genome in 2003. His 2017 session covered the Personalized OncoGenomics Program — by then 776 patients consented across 50 tumour types, with the analysis informative for treatment decisions in 80% of the first 300 pilot patients.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Genomics</span>
+          <span class="tag">Cancer</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/marco-marra.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="leonard-susskind"
+           data-name="Leonard Susskind"
+           data-topic="Physics Q&A"
+           data-tags="physics quantum string theory cosmology space">
+        <div class="presenter-card__name">Leonard Susskind</div>
+        <div class="presenter-card__topic">The Black Hole Wars — String Theory, Black Holes &amp; the Landscape</div>
+        <div class="presenter-card__date">October 2020</div>
+        <div class="presenter-card__bio">Felix Bloch Professor of Theoretical Physics, Stanford University. One of the founding fathers of string theory and the holographic principle, and one of the most gifted physics communicators of his generation.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Quantum</span>
+          <span class="tag">Cosmology</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/leonard-susskind.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="susan-neiman"
+           data-name="Susan Neiman"
+           data-topic="Learning from the Germans"
+           data-tags="philosophy history ethics memory evil">
+        <div class="presenter-card__name">Susan Neiman</div>
+        <div class="presenter-card__topic">Learning from the Germans: Race and the Memory of Evil</div>
+        <div class="presenter-card__date">September 2020</div>
+        <div class="presenter-card__bio">Director of the Einstein Forum, Potsdam. Philosopher and author of <em>Learning from the Germans</em>, exploring how societies confront — or fail to confront — their moral failures and historical crimes.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Philosophy</span>
+          <span class="tag">History</span>
+          <span class="tag">Ethics</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/susan-neiman.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="james-galbraith"
+           data-name="James Galbraith"
+           data-topic="Economics"
+           data-tags="economics politics inequality">
+        <div class="presenter-card__name">James Galbraith</div>
+        <div class="presenter-card__topic">Economics, Inequality and the Political Order</div>
+        <div class="presenter-card__date">July 2020</div>
+        <div class="presenter-card__bio">Lloyd M. Bentsen Jr. Chair in Government/Business Relations, University of Texas at Austin. Economist and author, son of John Kenneth Galbraith, with a career devoted to understanding inequality, political economy, and global financial systems.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Economics</span>
+          <span class="tag">Politics</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/james-galbraith.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="christof-koch"
            data-name="Christof Koch"
            data-topic="Consciousness"
            data-tags="neuroscience consciousness brain science">
@@ -210,170 +799,501 @@
           <span class="tag">Consciousness</span>
           <span class="tag">Science</span>
         </div>
+        <a class="presenter-card__link" href="sessions/christof-koch.html">Read the full session &rarr;</a>
       </div>
 
-      <div class="presenter-card fade-in"
-           data-name="James Galbraith"
-           data-topic="Economics"
-           data-tags="economics politics inequality">
-        <div class="presenter-card__name">James Galbraith</div>
-        <div class="presenter-card__topic">Economics and the Political Order</div>
-        <div class="presenter-card__date">July 2020</div>
-        <div class="presenter-card__bio">Lloyd M. Bentsen Jr. Chair in Government/Business Relations, University of Texas at Austin. Economist and author, son of John Kenneth Galbraith, with a career devoted to understanding inequality, political economy, and global financial systems.</div>
-        <div class="presenter-card__tags">
-          <span class="tag">Economics</span>
-          <span class="tag">Politics</span>
-        </div>
-      </div>
-
-      <div class="presenter-card fade-in"
-           data-name="Susan Neiman"
-           data-topic="Learning from the Memory of Evil"
-           data-tags="philosophy history ethics memory evil">
-        <div class="presenter-card__name">Susan Neiman</div>
-        <div class="presenter-card__topic">Learning from the Memory of Evil</div>
-        <div class="presenter-card__date">September 2020</div>
-        <div class="presenter-card__bio">Director of the Einstein Forum, Potsdam. Philosopher and author of <em>Learning from the Germans</em>, exploring how societies confront — or fail to confront — their moral failures and historical crimes.</div>
-        <div class="presenter-card__tags">
-          <span class="tag">Philosophy</span>
-          <span class="tag">History</span>
-          <span class="tag">Ethics</span>
-        </div>
-      </div>
-
-      <div class="presenter-card fade-in"
-           data-name="Leonard Susskind"
-           data-topic="Physics Q&A"
-           data-tags="physics quantum string theory cosmology">
-        <div class="presenter-card__name">Leonard Susskind</div>
-        <div class="presenter-card__topic">Physics Q&amp;A — String Theory, Black Holes &amp; the Landscape</div>
-        <div class="presenter-card__date">October 2020</div>
-        <div class="presenter-card__bio">Felix Bloch Professor of Theoretical Physics, Stanford University. One of the founding fathers of string theory and the holographic principle, and one of the most gifted physics communicators of his generation.</div>
-        <div class="presenter-card__tags">
-          <span class="tag">Physics</span>
-          <span class="tag">Quantum</span>
-          <span class="tag">Cosmology</span>
-        </div>
-      </div>
-
-      <!-- Earlier series -->
-      <div class="presenter-card fade-in"
-           data-name="Janice Stein"
-           data-topic="International Relations"
-           data-tags="geopolitics international relations politics">
-        <div class="presenter-card__name">Janice Stein</div>
-        <div class="presenter-card__topic">International Relations &amp; Global Conflict</div>
-        <div class="presenter-card__date">Earlier Series</div>
-        <div class="presenter-card__bio">Founding Director, Munk School of Global Affairs & Public Policy, University of Toronto. One of Canada's foremost authorities on international negotiation, conflict resolution, and foreign policy.</div>
-        <div class="presenter-card__tags">
-          <span class="tag">Geopolitics</span>
-          <span class="tag">International Relations</span>
-        </div>
-      </div>
-
-      <div class="presenter-card fade-in"
-           data-name="Jacob Shapiro"
-           data-topic="Political Violence & Terrorism"
-           data-tags="geopolitics politics security terrorism">
-        <div class="presenter-card__name">Jacob Shapiro</div>
-        <div class="presenter-card__topic">Political Violence, Terrorism &amp; Security</div>
-        <div class="presenter-card__date">Earlier Series</div>
-        <div class="presenter-card__bio">Princeton University. Political scientist and co-director of the Empirical Studies of Conflict project, researching the causes and consequences of political violence around the world.</div>
-        <div class="presenter-card__tags">
-          <span class="tag">Geopolitics</span>
-          <span class="tag">Politics</span>
-          <span class="tag">Security</span>
-        </div>
-      </div>
-
-      <div class="presenter-card fade-in"
-           data-name="Thomas Homer-Dixon"
-           data-topic="Global Crisis & Complexity"
-           data-tags="climate geopolitics complexity environment">
-        <div class="presenter-card__name">Thomas Homer-Dixon</div>
-        <div class="presenter-card__topic">Global Crisis, Complexity &amp; Civilizational Risk</div>
-        <div class="presenter-card__date">Earlier Series</div>
-        <div class="presenter-card__bio">Author of <em>The Upside of Down</em> and <em>The Ingenuity Gap</em>. A leading scholar of how environmental stress, social complexity, and geopolitical instability interact to produce cascading crises.</div>
-        <div class="presenter-card__tags">
-          <span class="tag">Climate</span>
-          <span class="tag">Geopolitics</span>
-          <span class="tag">Complexity</span>
-        </div>
-      </div>
-
-      <div class="presenter-card fade-in"
-           data-name="Tim Maudlin"
-           data-topic="Philosophy of Physics"
-           data-tags="philosophy physics quantum foundations">
-        <div class="presenter-card__name">Tim Maudlin</div>
-        <div class="presenter-card__topic">Philosophy of Physics &amp; Quantum Foundations</div>
-        <div class="presenter-card__date">Earlier Series</div>
-        <div class="presenter-card__bio">New York University. Philosopher of physics working on the foundations of quantum mechanics and spacetime — asking the questions that physicists sometimes find it easier to set aside.</div>
-        <div class="presenter-card__tags">
-          <span class="tag">Philosophy</span>
-          <span class="tag">Physics</span>
-          <span class="tag">Quantum</span>
-        </div>
-      </div>
-
-      <div class="presenter-card fade-in"
-           data-name="Neil Turok"
-           data-topic="Cosmology and the Big Bang"
-           data-tags="physics cosmology quantum universe">
-        <div class="presenter-card__name">Neil Turok</div>
-        <div class="presenter-card__topic">Cosmology, the Big Bang &amp; the Shape of the Universe</div>
-        <div class="presenter-card__date">Earlier Series</div>
-        <div class="presenter-card__bio">Director Emeritus, Perimeter Institute. Cosmologist and co-developer of the cyclic model of the universe. Founded the African Institute for Mathematical Sciences, bringing world-class mathematics education to the continent.</div>
-        <div class="presenter-card__tags">
-          <span class="tag">Physics</span>
-          <span class="tag">Cosmology</span>
-          <span class="tag">Quantum</span>
-        </div>
-      </div>
-
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="lara-boyd"
            data-name="Lara Boyd"
            data-topic="Neuroplasticity"
            data-tags="neuroscience brain health medicine">
         <div class="presenter-card__name">Lara Boyd</div>
         <div class="presenter-card__topic">Neuroplasticity and Brain Health</div>
-        <div class="presenter-card__date">Earlier Series</div>
-        <div class="presenter-card__bio">UBC Brain Research Centre. A leading researcher in neuroplasticity and brain-behaviour relationships, whose TED Talk on learning and the brain has reached millions worldwide.</div>
+        <div class="presenter-card__date">April 2020</div>
+        <div class="presenter-card__bio">Professor and Distinguished University Scholar, UBC Brain Research Centre. A leading researcher in neuroplasticity and brain-behaviour relationships, whose TED Talk on learning and the brain has reached millions worldwide.</div>
         <div class="presenter-card__tags">
           <span class="tag">Neuroscience</span>
           <span class="tag">Brain</span>
           <span class="tag">Medicine</span>
         </div>
+        <a class="presenter-card__link" href="sessions/lara-boyd.html">Read the full session &rarr;</a>
       </div>
 
-      <div class="presenter-card fade-in"
+      <div class="presenter-card fade-in" id="david-goldfarb"
+           data-name="David Goldfarb"
+           data-topic="Antibiotic-Resistant Bacteria and Fungi"
+           data-tags="medicine biology health infection">
+        <div class="presenter-card__name">David Goldfarb</div>
+        <div class="presenter-card__topic">Antibiotic-Resistant Bacteria and Fungi</div>
+        <div class="presenter-card__date">February 2020</div>
+        <div class="presenter-card__bio">A session on drug-resistant bacteria and fungi — and, delivered in late February 2020, on COVID-19, which was then only beginning to spread.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Infectious Disease</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/david-goldfarb.html">Read the full session &rarr;</a>
+      </div>
+
+      <!-- 2019 -->
+      <div class="presenter-card fade-in" id="robert-gray"
+           data-name="Robert Gray"
+           data-topic="Megafires"
+           data-tags="climate environment wildfire forests">
+        <div class="presenter-card__name">Robert Gray</div>
+        <div class="presenter-card__topic">Megafires</div>
+        <div class="presenter-card__date">December 2019</div>
+        <div class="presenter-card__bio">A session on megafires and the paradox at the heart of fire management, in his own blunt words: "the more we suppress fires, the worse they will eventually become."</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Climate</span>
+          <span class="tag">Environment</span>
+          <span class="tag">Wildfire</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/robert-gray.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="suzanne-simard"
            data-name="Suzanne Simard"
            data-topic="Forest Intelligence"
            data-tags="climate environment biology ecology forests">
         <div class="presenter-card__name">Suzanne Simard</div>
-        <div class="presenter-card__topic">The Wood Wide Web: How Forests Communicate</div>
-        <div class="presenter-card__date">Earlier Series</div>
-        <div class="presenter-card__bio">UBC Department of Forest and Conservation Sciences. The ecologist whose research revealed how trees communicate and share resources through underground fungal networks — changing how we understand forests forever.</div>
+        <div class="presenter-card__topic">How Trees Communicate</div>
+        <div class="presenter-card__date">October 2019</div>
+        <div class="presenter-card__bio">UBC Department of Forest and Conservation Sciences. The ecologist whose research revealed how trees communicate and share resources through underground fungal networks — changing how we understand forests forever. Author of <em>Finding the Mother Tree</em>.</div>
         <div class="presenter-card__tags">
-          <span class="tag">Climate</span>
           <span class="tag">Environment</span>
           <span class="tag">Biology</span>
+          <span class="tag">Ecology</span>
         </div>
+        <a class="presenter-card__link" href="sessions/suzanne-simard.html">Read the full session &rarr;</a>
       </div>
 
-      <div class="presenter-card fade-in"
-           data-name="Norman Goldstein"
-           data-topic="Medicine and Health Policy"
-           data-tags="medicine health policy">
-        <div class="presenter-card__name">Norman Goldstein</div>
-        <div class="presenter-card__topic">Medicine, Health Policy &amp; the Limits of Evidence</div>
-        <div class="presenter-card__date">Earlier Series</div>
-        <div class="presenter-card__bio">Physician and health policy scholar exploring the intersection of clinical practice, public health, and the political forces that shape how medical evidence is used — or ignored.</div>
+      <div class="presenter-card fade-in" id="nicolas-dea"
+           data-name="Nicolas Dea"
+           data-topic="Developments in Back Surgery"
+           data-tags="medicine neuroscience surgery">
+        <div class="presenter-card__name">Nicolas Dea</div>
+        <div class="presenter-card__topic">Developments in Back Surgery</div>
+        <div class="presenter-card__date">September 2019</div>
+        <div class="presenter-card__bio">A Vancouver neurosurgeon specializing in spine surgery. His presentation covered modern developments in back surgery, and his slide deck is preserved in the Science Plus archive.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Surgery</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/nicolas-dea.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="miguel-palacios"
+           data-name="Miguel Palacios"
+           data-topic="Income-Based Student Funding"
+           data-tags="economics education finance">
+        <div class="presenter-card__name">Miguel Palacios</div>
+        <div class="presenter-card__topic">Income-Based Student Funding</div>
+        <div class="presenter-card__date">September 2019</div>
+        <div class="presenter-card__bio">Associate Professor of Finance, University of Calgary. A session making the case for income-share agreements as a way to pay for education, drawing on the Lumni Foundation's record of roughly $70 million placed with about 10,000 students — and closing with a direct question: "who is ready to sign up?"</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Economics</span>
+          <span class="tag">Education</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/miguel-palacios.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="fred-brauer"
+           data-name="Fred Brauer"
+           data-topic="Mathematicians are Different"
+           data-tags="mathematics science">
+        <div class="presenter-card__name">Fred Brauer</div>
+        <div class="presenter-card__topic">Mathematicians are Different</div>
+        <div class="presenter-card__date">May 2019 &mdash; also April 2017</div>
+        <div class="presenter-card__bio">Longtime follower of Science Plus and Emeritus Professor of Mathematics, UBC. Fred presented to Science Plus on two occasions: &ldquo;Mathematicians are Different&rdquo; on April 26, 2017, and a second presentation in May 2019, whose slide deck is preserved.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Mathematics</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/fred-brauer.html">Read the full session &rarr;</a>
+      </div>
+
+      <!-- 2018 -->
+      <div class="presenter-card fade-in" id="chris-oram"
+           data-name="Chris Oram"
+           data-topic="Bangkok to Paris on Two Wheels"
+           data-tags="physics particle cern travel">
+        <div class="presenter-card__name">Chris Oram</div>
+        <div class="presenter-card__topic">Bangkok to Paris on Two Wheels</div>
+        <div class="presenter-card__date">February 2019</div>
+        <div class="presenter-card__bio">B.Sc. in physics from Bedford College, University of London, 1973, and Ph.D. from Queen Mary College, University of London, 1977. He rose to become head of engineering at the TRIUMF Laboratory in Vancouver, then moved to Geneva to work at CERN. The highlight of his career was being responsible for building two large detectors, one at the Stanford Linear Accelerator Center and the second at CERN. After designing and building the second detector for the ATLAS experiment, he was elected chairman of the ATLAS collaboration board at CERN from 2004 to 2008. Chris and his wife bicycled from Bangkok to Paris over the Himalayas, a distance of 17,000 kilometres, and his talk was a wonderful slide presentation of that experience. <a href="https://janddfamilytree.wordpress.com/john-anderson-oram-1920-2007/christopher-john-oram-1952/" target="_blank" rel="noopener">More about Chris Oram &rarr;</a></div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">CERN</span>
+          <span class="tag">Adventure</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/chris-oram.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="kiley-hamlin"
+           data-name="Kiley Hamlin"
+           data-topic="Infant Morality"
+           data-tags="psychology development ethics">
+        <div class="presenter-card__name">Kiley Hamlin</div>
+        <div class="presenter-card__topic">The Moral Life of Infants</div>
+        <div class="presenter-card__date">2018</div>
+        <div class="presenter-card__bio">Professor of Psychology, UBC, and author. Kiley's session focused on the beginnings of moral judgment in infancy — what very young children appear to grasp long before they can explain it.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Psychology</span>
+          <span class="tag">Development</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/kiley-hamlin.html">Read the full session &rarr;</a>
+      </div>
+
+      <!-- 2017 -->
+      <div class="presenter-card fade-in" id="joel-bakan"
+           data-name="Joel Bakan"
+           data-topic="The Corporation and Corporate Power"
+           data-tags="economics politics law corporations">
+        <div class="presenter-card__name">Joel Bakan</div>
+        <div class="presenter-card__topic">The Corporation and Corporate Power</div>
+        <div class="presenter-card__date">May 2018</div>
+        <div class="presenter-card__bio">Professor, Peter A. Allard School of Law, UBC, and author of <em>The Corporation</em> and other books on corporate power. There is no written or PowerPoint record of this session.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Law</span>
+          <span class="tag">Economics</span>
+          <span class="tag">Corporate Power</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/joel-bakan.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="matthew-choptuik"
+           data-name="Matthew Choptuik"
+           data-topic="Black Holes"
+           data-tags="physics space gravity">
+        <div class="presenter-card__name">Matthew Choptuik</div>
+        <div class="presenter-card__topic">Black Holes</div>
+        <div class="presenter-card__date">February 2018</div>
+        <div class="presenter-card__bio">Professor of Physics at the University of British Columbia and a specialist in numerical relativity &mdash; using supercomputer simulation to study Einstein's equations and gravitational collapse. His slide deck is preserved in the Science Plus archive.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/matthew-choptuik.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="todd-litman"
+           data-name="Todd Litman"
+           data-topic="Innovative Solutions to Transportation"
+           data-tags="economics climate transportation cities">
+        <div class="presenter-card__name">Todd Litman</div>
+        <div class="presenter-card__topic">Innovative Solutions to Transportation</div>
+        <div class="presenter-card__date">October 2017</div>
+        <div class="presenter-card__bio">Founder and executive director of the Victoria Transport Policy Institute, an independent research organization dedicated to innovative solutions to transportation problems. His slide deck is preserved in the Science Plus archive.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Transportation</span>
+          <span class="tag">Policy</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/todd-litman.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="mark-van-raamsdonk"
+           data-name="Mark Van Raamsdonk"
+           data-topic="Gravity and General Relativity — New Thoughts and Developments"
+           data-tags="physics quantum theory">
+        <div class="presenter-card__name">Mark Van Raamsdonk</div>
+        <div class="presenter-card__topic">Gravity and General Relativity &mdash; New Thoughts and Developments</div>
+        <div class="presenter-card__date">June 2017</div>
+        <div class="presenter-card__bio">Professor, Department of Physics, UBC. Mark's presentation on string theory and fundamental particles is preserved in the archive as a PowerPoint.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Quantum</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/mark-van-raamsdonk.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="john-mail"
+           data-name="John Mail"
+           data-topic="Family Medicine"
+           data-tags="medicine health practice">
+        <div class="presenter-card__name">John Mail</div>
+        <div class="presenter-card__topic">Family Medicine</div>
+        <div class="presenter-card__date">April 2017</div>
+        <div class="presenter-card__bio">A session on family medicine — the general-practice end of the health system, described from inside it.</div>
         <div class="presenter-card__tags">
           <span class="tag">Medicine</span>
           <span class="tag">Health</span>
-          <span class="tag">Policy</span>
         </div>
+        <a class="presenter-card__link" href="sessions/john-mail.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="steve-sawyer"
+           data-name="Steve Sawyer"
+           data-topic="Megaprojects"
+           data-tags="engineering economics infrastructure">
+        <div class="presenter-card__name">Steve Sawyer</div>
+        <div class="presenter-card__topic">Megaprojects</div>
+        <div class="presenter-card__date">March 2017</div>
+        <div class="presenter-card__bio">Steve is a professional engineer who worked on the rehabilitation of major naval vessels. His session was on megaprojects — the vast, expensive undertakings that so reliably run late and over budget, and what separates the ones that work from the ones that don't.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Engineering</span>
+          <span class="tag">Infrastructure</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/steve-sawyer.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="tex-kissoon"
+           data-name="Tex Kissoon"
+           data-topic="Deploying Resources in a Pandemic"
+           data-tags="medicine health pandemic">
+        <div class="presenter-card__name">Tex Kissoon</div>
+        <div class="presenter-card__topic">Deploying Resources in a Pandemic</div>
+        <div class="presenter-card__date">January 2017</div>
+        <div class="presenter-card__bio">Professor of Pediatrics, UBC, and a prominent critical care doctor and investigator at BC Children's Hospital, Vancouver. Three years before COVID-19, this session focused on how medical resources actually get deployed when a pandemic arrives — the planning problem behind the clinical one.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Pandemic</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/tex-kissoon.html">Read the full session &rarr;</a>
+      </div>
+
+      <!-- 2016 -->
+      <div class="presenter-card fade-in" id="steve-dodge"
+           data-name="Steve Dodge"
+           data-topic="Superconductivity"
+           data-tags="physics materials">
+        <div class="presenter-card__name">Steve Dodge</div>
+        <div class="presenter-card__topic">Superconductivity</div>
+        <div class="presenter-card__date">December 2016</div>
+        <div class="presenter-card__bio">Professor of Physics, Simon Fraser University. This session was on superconductivity — the materials that lose all electrical resistance, and why they still have not stopped surprising physicists.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Materials</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/steve-dodge.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="bill-unruh"
+           data-name="Bill Unruh"
+           data-topic="LIGO and Gravitational Waves"
+           data-tags="physics cosmology space gravity">
+        <div class="presenter-card__name">Bill Unruh</div>
+        <div class="presenter-card__topic">LIGO and Gravitational Waves</div>
+        <div class="presenter-card__date">December 2016</div>
+        <div class="presenter-card__bio">Professor of Physics, UBC, and discoverer of the &ldquo;Unruh effect.&rdquo; His theoretical work sits behind the detection of gravitational waves by LIGO — ripples in spacetime that Einstein predicted a century before anyone could measure one. He described the planning and construction of this remarkable project.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Gravity</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/bill-unruh.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="jeff-joyce"
+           data-name="Jeff Joyce"
+           data-topic="Making a Safety Case for Driverless Cars"
+           data-tags="ai technology engineering safety">
+        <div class="presenter-card__name">Jeff Joyce</div>
+        <div class="presenter-card__topic">Making a Safety Case for Driverless Cars</div>
+        <div class="presenter-card__date">November 2016</div>
+        <div class="presenter-card__bio">Co-founder of Critical Systems Labs, with a Cambridge PhD and patents in vehicle autonomy. His question for the room: should a self-driving car obey the law exactly, or drive the way an expert human actually drives?</div>
+        <div class="presenter-card__tags">
+          <span class="tag">AI &amp; Technology</span>
+          <span class="tag">Engineering</span>
+          <span class="tag">Safety</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/jeff-joyce.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="erik-werker"
+           data-name="Erik Werker"
+           data-topic="Economics and Development"
+           data-tags="economics development business">
+        <div class="presenter-card__name">Erik Werker</div>
+        <div class="presenter-card__topic">Economics and Development</div>
+        <div class="presenter-card__date">October 2016</div>
+        <div class="presenter-card__bio">Beedie School of Business, Simon Fraser University. His October 2016 session survives in the archive as a slide deck.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Economics</span>
+          <span class="tag">Development</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/erik-werker.html">Read the full session &rarr;</a>
+      </div>
+
+      <!-- 2015 -->
+      <div class="presenter-card fade-in" id="holger-hoos"
+           data-name="Holger Hoos"
+           data-topic="Artificial Intelligence"
+           data-tags="ai technology computing">
+        <div class="presenter-card__name">Holger Hoos</div>
+        <div class="presenter-card__topic">Artificial Intelligence</div>
+        <div class="presenter-card__date">2015</div>
+        <div class="presenter-card__bio">UBC Computer Science. Holger talked about artificial intelligence — a full decade before the current wave arrived.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">AI &amp; Technology</span>
+          <span class="tag">Computing</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/holger-hoos.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="pietro-widmer"
+           data-name="Pietro Widmer"
+           data-topic="Planetary Missions"
+           data-tags="space planets missions astronomy">
+        <div class="presenter-card__name">Pietro Widmer</div>
+        <div class="presenter-card__topic">Fifty Years of Planetary Missions</div>
+        <div class="presenter-card__date">2015</div>
+        <div class="presenter-card__bio">Pietro is a professional engineer. He gave us a tour of more than fifty years of solar system exploration, from Pioneer 5 to New Horizons — delivered with a scale model in which the Earth is a peppercorn.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Space</span>
+          <span class="tag">Planets</span>
+          <span class="tag">Missions</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/pietro-widmer.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="peter-holt"
+           data-name="Peter Holt"
+           data-topic="Transportation"
+           data-tags="engineering transportation infrastructure">
+        <div class="presenter-card__name">Peter Holt</div>
+        <div class="presenter-card__topic">Transportation</div>
+        <div class="presenter-card__date">March 2015</div>
+        <div class="presenter-card__bio">Peter is a professional engineer who presented on transportation — how people and goods actually move, and what that costs.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Engineering</span>
+          <span class="tag">Transportation</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/peter-holt.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="danny-shapiro"
+           data-name="Danny Shapiro"
+           data-topic="Piketty and Inequality"
+           data-tags="economics inequality politics">
+        <div class="presenter-card__name">Danny Shapiro</div>
+        <div class="presenter-card__topic">Piketty and Inequality</div>
+        <div class="presenter-card__date">January 2015</div>
+        <div class="presenter-card__bio">Professor of Economics and Dean of the Executive MBA Program, SFU. Danny's session worked through Piketty's argument that returns on capital outrun economic growth — with a nod to Larry Summers's line that "Piketty's tome seems to be drawn on a dozen times for every time it is read."</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Economics</span>
+          <span class="tag">Inequality</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/danny-shapiro.html">Read the full session &rarr;</a>
+      </div>
+
+      <!-- 2014 -->
+      <div class="presenter-card fade-in" id="doug-schmidt"
+           data-name="Doug Schmidt"
+           data-topic="The IPCC Report on Climate Change"
+           data-tags="climate environment science policy">
+        <div class="presenter-card__name">Doug Schmidt</div>
+        <div class="presenter-card__topic">The IPCC Report on Climate Change</div>
+        <div class="presenter-card__date">October 2014</div>
+        <div class="presenter-card__bio">Doug is a lawyer by profession with a science background and a special interest in climate. He took Science Plus through the IPCC's assessment of climate change in 2014 — one of the series' first encounters with the subject that keeps returning.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Climate</span>
+          <span class="tag">Environment</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/doug-schmidt.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="peter-gajecki"
+           data-name="Peter Gajecki"
+           data-topic="Consciousness and Awareness Under Anesthesia"
+           data-tags="medicine neuroscience consciousness anesthesia">
+        <div class="presenter-card__name">Peter Gajecki</div>
+        <div class="presenter-card__topic">Consciousness and Awareness Under Anesthesia</div>
+        <div class="presenter-card__date">September 2014</div>
+        <div class="presenter-card__bio">Peter is a Vancouver anesthesiologist. His session was on the bispectral index monitor (BIS) and the unsettling problem it exists to solve: patients who remain aware while under anesthesia.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Medicine</span>
+          <span class="tag">Consciousness</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/peter-gajecki.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="norman-goldstein"
+           data-name="Norman Goldstein"
+           data-topic="Quantum Entanglement"
+           data-tags="physics mathematics quantum entanglement">
+        <div class="presenter-card__name">Norman Goldstein</div>
+        <div class="presenter-card__topic">Quantum Entanglement</div>
+        <div class="presenter-card__date">April 2014</div>
+        <div class="presenter-card__bio">Norman is a mathematician. He gave one of the founding sessions of the salon: an evening on quantum entanglement — the correlation between distant particles that Einstein could not accept, and is still not fully understood after 100 years.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Quantum</span>
+          <span class="tag">Entanglement</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/norman-goldstein.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="nigel-skermer"
+           data-name="Nigel Skermer"
+           data-topic="One Dam Thing After Another"
+           data-tags="engineering infrastructure environment water">
+        <div class="presenter-card__name">Nigel Skermer</div>
+        <div class="presenter-card__topic">One Dam Thing After Another</div>
+        <div class="presenter-card__date">February 2014</div>
+        <div class="presenter-card__bio">Nigel is a professional engineer and soil specialist. One of the earliest Science Plus evenings: a photographic tour of dams and the engineering that holds them up.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Engineering</span>
+          <span class="tag">Infrastructure</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/nigel-skermer.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="larry-wasserman"
+           data-name="Larry Wasserman"
+           data-topic="Bayesian Statistics"
+           data-tags="mathematics statistics science">
+        <div class="presenter-card__name">Larry Wasserman</div>
+        <div class="presenter-card__topic">Bayesian Statistics</div>
+        <div class="presenter-card__date">2014</div>
+        <div class="presenter-card__bio">Professor of Statistics and Data Science, Machine Learning Department, Carnegie Mellon University. A session on Bayesian statistics — reasoning about an uncertain world by updating what you believe as the evidence arrives.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Mathematics</span>
+          <span class="tag">Statistics</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/larry-wasserman.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="ron-burnett"
+           data-name="Ron Burnett"
+           data-topic="Thomas Kuhn and Scientific Revolutions"
+           data-tags="philosophy history science ideas">
+        <div class="presenter-card__name">Ron Burnett</div>
+        <div class="presenter-card__topic">Thomas Kuhn and Scientific Revolutions</div>
+        <div class="presenter-card__date">2014</div>
+        <div class="presenter-card__bio">President of Emily Carr University, and author. An Officer of the Order of Canada and a member of the Order of British Columbia. A session on Thomas Kuhn — paradigms, scientific revolutions, and the awkward business of a whole field changing its mind.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Philosophy</span>
+          <span class="tag">History of Science</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/ron-burnett.html">Read the full session &rarr;</a>
+      </div>
+
+      <!-- 2013 -->
+      <div class="presenter-card fade-in" id="jan-simon"
+           data-name="Jan Simon"
+           data-topic="The 2008 Subprime Crisis"
+           data-tags="economics finance history">
+        <div class="presenter-card__name">Jan Simon</div>
+        <div class="presenter-card__topic">The 2008 Subprime Crisis</div>
+        <div class="presenter-card__date">December 2013</div>
+        <div class="presenter-card__bio">Professor of Economics, Simon Fraser University. An account of the subprime mortgage crisis, five years on from the collapse.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">Economics</span>
+          <span class="tag">Finance</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/jan-simon.html">Read the full session &rarr;</a>
+      </div>
+
+      <div class="presenter-card fade-in" id="alejandro-rojas"
+           data-name="Alejandro Rojas"
+           data-topic="The Chilean Experiment, the Coup, and Exile"
+           data-tags="geopolitics history politics chile agriculture">
+        <div class="presenter-card__name">Alejandro Rojas</div>
+        <div class="presenter-card__topic">The Chilean Experiment in Social Change, the Coup, and Exile</div>
+        <div class="presenter-card__date">2013</div>
+        <div class="presenter-card__bio">Professor Emeritus, UBC Faculty of Land and Food Systems. A former member of the Chilean Chamber of Deputies and right-hand person to Allende. This session was on Alejandro's experience in the Chilean experiment in social change and the subsequent coup by Pinochet, followed by his escape and years in exile, ending up in Canada. There is no formal record of this session.</div>
+        <div class="presenter-card__tags">
+          <span class="tag">History</span>
+          <span class="tag">Politics</span>
+          <span class="tag">Chile</span>
+        </div>
+        <a class="presenter-card__link" href="sessions/alejandro-rojas.html">Read the full session &rarr;</a>
       </div>
 
       <div class="no-results">No speakers match your search. Try a different keyword or filter.</div>
@@ -381,12 +1301,14 @@
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer__grid">
     <div>
       <div class="footer__brand">Science<span>+</span></div>
-      <p class="footer__desc">A curated lecture series hosted by Ray Schachter, bringing leading minds together for intimate Zoom conversations on science, geopolitics, history, medicine, and philosophy.</p>
+      <p class="footer__desc">A curated lecture series hosted by Ray Schachter, bringing leading minds together for intimate online conversations on science, geopolitics, history, medicine, and philosophy.</p>
     </div>
     <div>
       <span class="footer__col-title">Explore</span>
@@ -394,16 +1316,19 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="presenters.html">Past Presenters</a></li>
-        <li><a href="moments.html">Moments</a></li>
-        <li><a href="events.html">Upcoming Events</a></li>
+        <li><a href="moments.html">Quotes</a></li>
         <li><a href="archive.html">Recordings</a></li>
+        <li><a href="stats.html">By the Numbers</a></li>
+        <li><a href="events.html">Upcoming Events</a></li>
       </ul>
     </div>
     <div>
       <span class="footer__col-title">Connect</span>
       <ul class="footer__links">
         <li><a href="events.html">Join an Upcoming Session</a></li>
-        <li><a href="archive.html">Request a Recording</a></li>
+        <li><a href="archive.html#request-access">Request a Recording</a></li>
+        <li><a href="about.html">About Ray Schachter</a></li>
+        <li><a href="mailto:schachter.ray@gmail.com">Email Ray</a></li>
       </ul>
     </div>
   </div>
@@ -414,5 +1339,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

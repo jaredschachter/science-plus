@@ -5,27 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recordings Archive — Science Plus</title>
   <meta name="description" content="Recordings of many past Science Plus sessions are available to attendees. Contact Ray to request access." />
+  <meta property="og:title" content="Recordings Archive — Science Plus" />
+  <meta property="og:description" content="Recordings of many past Science Plus sessions are available to attendees. Contact Ray to request access." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://science-plus.ca/archive" />
+  <meta property="og:url" content="https://science-plus.ca/archive" />
+  <meta property="og:image" content="https://science-plus.ca/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Science Plus" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231A2744'/%3E%3Ctext x='32' y='44' font-family='Georgia, serif' font-size='30' font-weight='700' fill='%23C4923A' text-anchor='middle'%3ES%2B%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- NAV -->
 <nav class="nav">
   <div class="nav__inner">
     <a class="nav__brand" href="index.html">Science<span>+</span></a>
-    <ul class="nav__links">
+    <ul class="nav__links" id="site-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="presenters.html">Past Presenters</a></li>
-      <li><a href="moments.html">Moments</a></li>
+      <li><a href="moments.html">Quotes</a></li>
       <li><a href="archive.html">Recordings</a></li>
+      <li><a href="stats.html">By the Numbers</a></li>
       <li><a href="events.html" class="nav__cta">Upcoming Events</a></li>
     </ul>
-    <button class="nav__burger" aria-label="Menu">
+    <button class="nav__burger" aria-label="Menu" aria-controls="site-menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+
+<main id="main">
 
 <!-- PAGE HEADER -->
 <div class="page-header">
@@ -41,81 +60,121 @@
   <div class="container">
     <div class="about-grid">
       <div>
-        <h3 style="margin-bottom:1rem;">A growing library of conversations</h3>
-        <p>Since Science Plus began in 2020, recordings of many sessions have been preserved — a quiet archive that reflects six years of intellectual life. Listening back to a conversation with Leonard Susskind or Suzanne Simard feels different the second time, with more context, more questions of your own.</p>
+        <h2 style="margin-bottom:1rem; font-size:1.5rem;">A growing library of conversations</h2>
+        <p>Science Plus has gathered since 2013. In the early years the record is a library of presentations and slides; when sessions moved online in 2020, full recordings began to be preserved. Together they reflect more than a decade of intellectual life. Listening back to a conversation with Leonard Susskind or Marco Marra feels different the second time, with more context, more questions of your own.</p>
 
-        <p>Recordings are available to members of the Science Plus community. They're not hosted publicly — this is a gathering, not a broadcast — but access is available on request.</p>
+        <p>Recordings are available to members of the Science Plus community when presenters have consented to publication. The same is true of PowerPoint presentations.</p>
 
-        <div style="background:var(--bg-alt); border-radius:var(--r); padding:2rem; margin:2rem 0; border-left:3px solid var(--gold);">
-          <h4 style="margin-bottom:.5rem;">How to request access</h4>
-          <p style="color:var(--muted); font-size:.9rem; margin-bottom:1.25rem;">If you'd like to watch a recording from a past session, use the form below. Ray will follow up personally. Specify the session or speaker you're looking for, or simply say you'd like to be added to the community list.</p>
+        <div class="pull-note" id="request-access">
+          <h3 style="margin-bottom:.5rem; font-size:1.15rem;">How to request access</h3>
+          <p style="color:var(--muted); margin-bottom:1.25rem;">If you'd like to watch a recording from a past session, use the form below. Ray will follow up personally. Specify the session or speaker you're looking for, or simply say you'd like to be added to the community list. You can also email Ray directly at <a href="mailto:schachter.ray@gmail.com">schachter.ray@gmail.com</a>.</p>
           <form class="rsvp-form" style="background:transparent; padding:0;">
             <div class="rsvp-row" style="flex-direction:column; gap:.75rem;">
-              <input type="text" placeholder="Your name" required style="min-width:unset;" />
-              <input type="email" placeholder="Your email address" required style="min-width:unset;" />
-              <input type="text" placeholder="Session or speaker you're looking for (optional)" style="min-width:unset;" />
+              <input type="text" name="name" autocomplete="name" aria-label="Your name" placeholder="Your name" required style="min-width:unset;" />
+              <input type="email" name="email" autocomplete="email" aria-label="Your email address" placeholder="Your email address" required style="min-width:unset;" />
+              <input type="text" name="session" aria-label="Session or speaker you're looking for (optional)" placeholder="Session or speaker you're looking for (optional)" style="min-width:unset;" />
               <div>
                 <button type="submit" class="btn btn--navy">Request Access</button>
               </div>
             </div>
-            <p class="rsvp-success">✓ Request received — Ray will be in touch.</p>
+            <p class="rsvp-success">✓ Your email app should open — press send and it reaches Ray directly.</p>
           </form>
         </div>
 
-        <h3 style="margin:2rem 0 1rem;">Sessions with recordings available</h3>
-        <p style="color:var(--muted); font-size:.9rem; margin-bottom:1.5rem;">The following sessions have recordings available. Note that not every session was recorded, and availability may vary. Contact Ray to confirm.</p>
+        <h2 style="margin:2rem 0 1rem; font-size:1.5rem;">Sessions cleared for publication</h2>
+        <p style="color:var(--muted); margin-bottom:1.5rem;">These presenters have given consent for their recording to be shared. Not every session was recorded, and consent is still being gathered for the rest. <a href="#request-access">Contact Ray to confirm</a>.</p>
 
         <div style="display:flex; flex-direction:column; gap:.75rem;">
-          <div class="event-card" style="cursor:default;">
-            <div class="event-card__date"><span class="event-card__month">Feb</span><span class="event-card__day">2026</span></div>
+          <div class="event-card">
+            <div class="event-card__date"><span class="event-card__month">Jun</span><span class="event-card__day">'26</span></div>
+            <div class="event-card__body">
+              <span class="card__tag">Medicine</span>
+              <div class="card__title"><a href="presenters.html#mark-bernstein">Mark Bernstein &mdash; Neurosurgery and Medical Ethics</a></div>
+              <p class="card__excerpt">Presenter has consented to publication &middot; <a href="#request-access">Request access</a></p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-card__date"><span class="event-card__month">Feb</span><span class="event-card__day">'26</span></div>
             <div class="event-card__body">
               <span class="card__tag">Geopolitics</span>
-              <div class="card__title">Andrew Standley — Global Power Rivalries and the EU's Place</div>
-              <p class="card__excerpt" style="font-size:.8rem;">Recording available · Request access above</p>
+              <div class="card__title"><a href="presenters.html#andrew-standley">Andrew Standley — Global Power Rivalries and the EU's Place</a></div>
+              <p class="card__excerpt">Presenter has consented to publication &middot; <a href="#request-access">Request access</a></p>
             </div>
           </div>
-          <div class="event-card" style="cursor:default;">
-            <div class="event-card__date"><span class="event-card__month">Jan</span><span class="event-card__day">2026</span></div>
+          <div class="event-card">
+            <div class="event-card__date"><span class="event-card__month">Mar</span><span class="event-card__day">'26</span></div>
+            <div class="event-card__body">
+              <span class="card__tag">Neuroscience</span>
+              <div class="card__title"><a href="presenters.html#annie-ciernia">Annie Ciernia — Our Gut Biome and How It Influences the Brain</a></div>
+              <p class="card__excerpt">Presenter has consented to publication &middot; <a href="#request-access">Request access</a></p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-card__date"><span class="event-card__month">May</span><span class="event-card__day">'26</span></div>
+            <div class="event-card__body">
+              <span class="card__tag">Climate</span>
+              <div class="card__title"><a href="presenters.html#lawrence-shipman">Michael Lawrence &amp; Megan Shipman — Modeling a Pathway Through Global Crises</a></div>
+              <p class="card__excerpt">Presenter has consented to publication &middot; <a href="#request-access">Request access</a></p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-card__date"><span class="event-card__month">Jan</span><span class="event-card__day">'26</span></div>
             <div class="event-card__body">
               <span class="card__tag">Planetary Science</span>
-              <div class="card__title">Graziella Caprarelli — Water and Life on Mars</div>
-              <p class="card__excerpt" style="font-size:.8rem;">Recording available · Request access above</p>
+              <div class="card__title"><a href="presenters.html#graziella-caprarelli">Graziella Caprarelli — Water and Life on Mars</a></div>
+              <p class="card__excerpt">Presenter has consented to publication &middot; <a href="#request-access">Request access</a></p>
             </div>
           </div>
-          <div class="event-card" style="cursor:default;">
-            <div class="event-card__date"><span class="event-card__month">Dec</span><span class="event-card__day">2025</span></div>
+          <div class="event-card">
+            <div class="event-card__date"><span class="event-card__month">Dec</span><span class="event-card__day">'25</span></div>
             <div class="event-card__body">
               <span class="card__tag">Theoretical Physics</span>
-              <div class="card__title">Bianca Dittrich — The Theory of Everything</div>
-              <p class="card__excerpt" style="font-size:.8rem;">Recording available · Request access above</p>
+              <div class="card__title"><a href="presenters.html#bianca-dittrich">Bianca Dittrich — The Theory of Everything</a></div>
+              <p class="card__excerpt">Presenter has consented to publication &middot; <a href="#request-access">Request access</a></p>
             </div>
           </div>
-          <div class="event-card" style="cursor:default;">
-            <div class="event-card__date"><span class="event-card__month">Oct</span><span class="event-card__day">2025</span></div>
+          <div class="event-card">
+            <div class="event-card__date"><span class="event-card__month">Sep</span><span class="event-card__day">'25</span></div>
             <div class="event-card__body">
-              <span class="card__tag">Quantum Computing</span>
-              <div class="card__title">Robert Raussendorf — Quantum Computers: Developments, Promises and Hopes</div>
-              <p class="card__excerpt" style="font-size:.8rem;">Recording available · Request access above</p>
+              <span class="card__tag">Climate &amp; Environment</span>
+              <div class="card__title"><a href="presenters.html#mark-jellinek">Mark Jellinek — Volcanoes and Wildfires</a></div>
+              <p class="card__excerpt">Presenter has consented to publication &middot; <a href="#request-access">Request access</a></p>
             </div>
           </div>
-          <div class="event-card" style="cursor:default;">
-            <div class="event-card__date"><span class="event-card__month">Sept</span><span class="event-card__day">2025</span></div>
+          <div class="event-card">
+            <div class="event-card__date"><span class="event-card__month">May</span><span class="event-card__day">'25</span></div>
             <div class="event-card__body">
-              <span class="card__tag">Climate & Environment</span>
-              <div class="card__title">Mark Jellinek — Volcanoes and Wildfires: Myths, Risks and Climate Change</div>
-              <p class="card__excerpt" style="font-size:.8rem;">Recording available · Request access above</p>
+              <span class="card__tag">AI &amp; Technology</span>
+              <div class="card__title"><a href="presenters.html#william-merrill">William Merrill — Large Language Models: Capabilities and Limitations</a></div>
+              <p class="card__excerpt">Presenter has consented to publication &middot; <a href="#request-access">Request access</a></p>
             </div>
           </div>
-          <div class="event-card" style="cursor:default;">
-            <div class="event-card__date"><span class="event-card__month">May</span><span class="event-card__day">2025</span></div>
+          <div class="event-card">
+            <div class="event-card__date"><span class="event-card__month">Oct</span><span class="event-card__day">'24</span></div>
             <div class="event-card__body">
-              <span class="card__tag">AI & Technology</span>
-              <div class="card__title">William Merrill — Large Language Models: Capabilities and Limitations</div>
-              <p class="card__excerpt" style="font-size:.8rem;">Recording available · Request access above</p>
+              <span class="card__tag">Philosophy</span>
+              <div class="card__title"><a href="presenters.html#tim-maudlin">Tim Maudlin — The Challenges of Quantum Physics</a></div>
+              <p class="card__excerpt">Presenter has consented to publication &middot; <a href="#request-access">Request access</a></p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-card__date"><span class="event-card__month">Nov</span><span class="event-card__day">'23</span></div>
+            <div class="event-card__body">
+              <span class="card__tag">Physics</span>
+              <div class="card__title"><a href="presenters.html#james-dunlop">James Dunlop — Brookhaven National Laboratory and the Primordial Soup</a></div>
+              <p class="card__excerpt">Presenter has consented to publication &middot; <a href="#request-access">Request access</a></p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-card__date"><span class="event-card__month">Feb</span><span class="event-card__day">'21</span></div>
+            <div class="event-card__body">
+              <span class="card__tag">Space</span>
+              <div class="card__title"><a href="presenters.html#catherine-johnson">Catherine Johnson — OSIRIS-REx: Touching an Asteroid</a></div>
+              <p class="card__excerpt">Presenter has consented to publication &middot; <a href="#request-access">Request access</a></p>
             </div>
           </div>
           <div style="text-align:center; padding:1rem; color:var(--muted); font-size:.85rem; font-style:italic;">
-            + Many earlier sessions from 2020–2024 · Contact Ray to enquire
+            Consent is still being gathered for the remaining sessions.
           </div>
         </div>
       </div>
@@ -124,12 +183,12 @@
         <div class="sidebar-card fade-in" style="margin-bottom:1.5rem;">
           <span class="sidebar-card__label">About the Archive</span>
           <div class="sidebar-stat">
-            <div class="num">30+</div>
-            <div class="lbl">Sessions since 2020</div>
+            <div class="num">20+</div>
+            <div class="lbl">Recorded sessions since 2020</div>
           </div>
           <div class="sidebar-stat">
-            <div class="num">Many</div>
-            <div class="lbl">Sessions with recordings available</div>
+            <div class="num">10</div>
+            <div class="lbl">Sessions cleared for publication</div>
           </div>
           <div class="sidebar-stat">
             <div class="num">Free</div>
@@ -146,14 +205,14 @@
         <div class="sidebar-card fade-in">
           <span class="sidebar-card__label">Browse by Topic</span>
           <div style="display:flex; flex-wrap:wrap; gap:.4rem;">
-            <a href="presenters.html" style="text-decoration:none;"><span class="tag" style="cursor:pointer;">Quantum Physics</span></a>
-            <a href="presenters.html" style="text-decoration:none;"><span class="tag" style="cursor:pointer;">Geopolitics</span></a>
-            <a href="presenters.html" style="text-decoration:none;"><span class="tag" style="cursor:pointer;">Mars &amp; Space</span></a>
-            <a href="presenters.html" style="text-decoration:none;"><span class="tag" style="cursor:pointer;">AI &amp; LLMs</span></a>
-            <a href="presenters.html" style="text-decoration:none;"><span class="tag" style="cursor:pointer;">Consciousness</span></a>
-            <a href="presenters.html" style="text-decoration:none;"><span class="tag" style="cursor:pointer;">Climate</span></a>
-            <a href="presenters.html" style="text-decoration:none;"><span class="tag" style="cursor:pointer;">Philosophy</span></a>
-            <a href="presenters.html" style="text-decoration:none;"><span class="tag" style="cursor:pointer;">Economics</span></a>
+            <a class="tag" href="presenters.html?filter=physics">Quantum Physics</a>
+            <a class="tag" href="presenters.html?filter=geopolitics">Geopolitics</a>
+            <a class="tag" href="presenters.html?filter=space">Mars &amp; Space</a>
+            <a class="tag" href="presenters.html?filter=ai">AI &amp; LLMs</a>
+            <a class="tag" href="presenters.html?filter=neuroscience">Consciousness</a>
+            <a class="tag" href="presenters.html?filter=climate">Climate</a>
+            <a class="tag" href="presenters.html?filter=philosophy">Philosophy</a>
+            <a class="tag" href="presenters.html?filter=economics">Economics</a>
           </div>
           <div style="margin-top:1rem;">
             <a href="presenters.html" class="btn btn--outline-dark" style="font-size:.85rem; width:100%; text-align:center;">Browse All Presenters →</a>
@@ -164,12 +223,14 @@
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer__grid">
     <div>
       <div class="footer__brand">Science<span>+</span></div>
-      <p class="footer__desc">A curated lecture series hosted by Ray Schachter, bringing leading minds together for intimate Zoom conversations on science, geopolitics, history, medicine, and philosophy.</p>
+      <p class="footer__desc">A curated lecture series hosted by Ray Schachter, bringing leading minds together for intimate online conversations on science, geopolitics, history, medicine, and philosophy.</p>
     </div>
     <div>
       <span class="footer__col-title">Explore</span>
@@ -177,16 +238,19 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="presenters.html">Past Presenters</a></li>
-        <li><a href="moments.html">Moments</a></li>
-        <li><a href="events.html">Upcoming Events</a></li>
+        <li><a href="moments.html">Quotes</a></li>
         <li><a href="archive.html">Recordings</a></li>
+        <li><a href="stats.html">By the Numbers</a></li>
+        <li><a href="events.html">Upcoming Events</a></li>
       </ul>
     </div>
     <div>
       <span class="footer__col-title">Connect</span>
       <ul class="footer__links">
         <li><a href="events.html">Join an Upcoming Session</a></li>
-        <li><a href="archive.html">Request a Recording</a></li>
+        <li><a href="archive.html#request-access">Request a Recording</a></li>
+        <li><a href="about.html">About Ray Schachter</a></li>
+        <li><a href="mailto:schachter.ray@gmail.com">Email Ray</a></li>
       </ul>
     </div>
   </div>
@@ -197,5 +261,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

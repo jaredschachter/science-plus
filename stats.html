@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Science Plus in Numbers — Fourteen Years by the Numbers</title>
+  <meta name="description" content="Fourteen years of Science Plus in numbers — sessions, presenters, fields of inquiry, and a few of the people who came back for more." />
+  <meta property="og:title" content="Science Plus in Numbers" />
+  <meta property="og:description" content="Fourteen years of Science Plus in numbers — sessions, presenters, fields of inquiry, and a few of the people who came back for more." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://science-plus.ca/stats" />
+  <meta property="og:url" content="https://science-plus.ca/stats" />
+  <meta property="og:image" content="https://science-plus.ca/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Science Plus" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231A2744'/%3E%3Ctext x='32' y='44' font-family='Georgia, serif' font-size='30' font-weight='700' fill='%23C4923A' text-anchor='middle'%3ES%2B%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ── Screen-reader-only (data tables that back every chart) ───── */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    /* ── Stats hero strip ──────────────────────────────────────────── */
+    .figure-row { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 880px; margin: 0 auto; }
+    .figure { text-align: center; padding: .25rem 1rem; border-left: 1px solid rgba(255,255,255,.14); }
+    .figure:first-child { border-left: none; }
+    .figure__num { display: block; font-family: 'Playfair Display', serif; font-weight: 600;
+                   font-size: clamp(3.1rem, 7vw, 4.6rem); line-height: 1; color: var(--gold);
+                   font-variant-numeric: tabular-nums; }
+    .figure__lbl { display: block; margin-top: .9rem; font-size: .74rem; font-weight: 600;
+                   letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.56); }
+    @media (max-width: 760px) {
+      .figure-row { grid-template-columns: repeat(2, 1fr); row-gap: 2.5rem; }
+      .figure:nth-child(odd) { border-left: none; }
+    }
+
+    /* ── Section headings shared ──────────────────────────────────── */
+    .stats-section-intro { max-width: 640px; margin: 0 auto 2.5rem; text-align: center; }
+    .stats-section-intro p { color: var(--muted); }
+
+    /* ── Chart card shell ─────────────────────────────────────────── */
+    .chart-card { background: var(--white); border-radius: var(--r); box-shadow: var(--sh); padding: 2rem; }
+    @media (max-width: 560px) { .chart-card { padding: 1.25rem 1rem; } }
+
+    /* ── Timeline chart ───────────────────────────────────────────── */
+    .timeline-caption { text-align: center; font-size: .95rem; color: var(--muted); margin-bottom: 1.75rem; }
+    .timeline-caption strong { color: var(--navy); }
+    .timeline-scroll { overflow-x: auto; padding-bottom: .25rem; -webkit-overflow-scrolling: touch; }
+    .timeline-svg { display: block; width: 100%; min-width: 720px; height: auto; }
+    .bar-hit { fill: transparent; cursor: pointer; }
+    .bar-rect { transition: opacity .18s ease; pointer-events: none; }
+    .bar-hit:hover + .bar-rect, .bar-hit:focus + .bar-rect, .bar-hit.active + .bar-rect { opacity: .72; }
+    .bar-hit:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+    .bar-val { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; fill: var(--navy); text-anchor: middle; pointer-events: none; opacity: 0; transition: opacity .18s ease; }
+    .bar-hit:hover ~ .bar-val, .bar-hit:focus ~ .bar-val, .bar-hit.active ~ .bar-val { opacity: 1; }
+    .bar-year { font-family: 'Inter', sans-serif; font-size: 13px; fill: var(--muted); text-anchor: middle; }
+    .era-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; fill: var(--muted); }
+    .era-divider { stroke: var(--border); stroke-width: 2; stroke-dasharray: 4 4; }
+    .chart-legend-swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: .5rem; flex-shrink: 0; }
+    .timeline-legend { display: flex; gap: 1.75rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap; font-size: .85rem; color: var(--muted); }
+    .timeline-legend span.chart-legend-swatch.li { background: var(--navy); }
+    .timeline-legend span.chart-legend-swatch.zm { background: var(--blue); }
+    .chart-readout { min-height: 1.4rem; text-align: center; font-size: .9rem; color: var(--navy); font-weight: 600; margin-top: 1rem; }
+    .chart-readout:empty::before { content: 'Hover or tab through a bar to see the year.'; color: var(--muted); font-weight: 400; font-style: italic; }
+
+    /* ── Donut chart ──────────────────────────────────────────────── */
+    .donut-wrap { display: grid; grid-template-columns: 340px 1fr; gap: 2.5rem; align-items: center; }
+    @media (max-width: 760px) { .donut-wrap { grid-template-columns: 1fr; } }
+    .donut-svg { width: 100%; max-width: 340px; height: auto; margin: 0 auto; display: block; }
+    .donut-seg path { stroke: var(--white); stroke-width: 2; transition: opacity .18s ease, transform .18s ease; transform-origin: 170px 170px; }
+    .donut-seg:hover path, .donut-seg:focus path, .donut-seg.active path { opacity: .82; transform: scale(1.035); }
+    .donut-seg:focus-visible { outline: none; }
+    .donut-seg:focus-visible path { stroke: var(--navy); stroke-width: 3; }
+    .donut-center-num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 44px; fill: var(--navy); text-anchor: middle; }
+    .donut-center-lbl { font-family: 'Inter', sans-serif; font-size: 12px; fill: var(--muted); text-anchor: middle; letter-spacing: .04em; }
+
+    .field-legend { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+    .field-legend li a {
+      display: flex; align-items: center; gap: .75rem;
+      min-height: 44px; padding: .35rem .6rem;
+      border-radius: 6px; text-decoration: none; color: var(--text);
+      transition: background .15s ease;
+    }
+    .field-legend li a:hover, .field-legend li a:focus-visible { background: var(--bg-alt); text-decoration: none; }
+    .field-legend li a:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+    .field-legend__name { flex: 1; font-size: .92rem; font-weight: 500; }
+    .field-legend__count { font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .field-legend__arrow { color: var(--muted); font-size: .85rem; }
+
+    /* ── Institutions bars ────────────────────────────────────────── */
+    .inst-list { display: flex; flex-direction: column; gap: .65rem; }
+    .inst-row { display: grid; grid-template-columns: 140px 1fr 34px; align-items: center; gap: .75rem; }
+    @media (max-width: 480px) { .inst-row { grid-template-columns: 96px 1fr 28px; } }
+    .inst-row__name { font-size: .85rem; color: var(--text); }
+    .inst-row__track { background: var(--bg-alt); border-radius: 999px; height: 14px; overflow: hidden; }
+    .inst-row__fill { background: var(--gold); height: 100%; border-radius: 999px; }
+    .inst-row__num { font-size: .85rem; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+
+    /* ── Honours list ─────────────────────────────────────────────── */
+    .honour-list { list-style: none; display: flex; flex-direction: column; gap: .9rem; }
+    .honour-item { display: flex; gap: .9rem; align-items: flex-start; padding-bottom: .9rem; border-bottom: 1px solid var(--border); }
+    .honour-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .honour-item__count { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; color: var(--navy); min-width: 2rem; }
+    .honour-item__name { font-size: .92rem; font-weight: 600; color: var(--navy); }
+    .honour-item__who { font-size: .82rem; color: var(--muted); margin-top: .1rem; }
+
+    /* ── Encore presenters ────────────────────────────────────────── */
+    .encore-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.1rem; }
+    .encore-card { background: var(--white); border-radius: var(--r); box-shadow: var(--sh); padding: 1.4rem; }
+    .encore-card__name { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); margin-bottom: .35rem; }
+    .encore-card__years { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .6rem; }
+    .encore-card__year { font-size: .74rem; font-weight: 700; background: var(--gold-lt); color: var(--gold-text); padding: .18rem .55rem; border-radius: 4px; }
+    .encore-card__note { font-size: .85rem; color: var(--muted); margin-top: .5rem; }
+
+    .duo-card { background: var(--navy); border-radius: var(--r); box-shadow: var(--sh); padding: 1.75rem; color: #fff; margin-top: 1.25rem; }
+    .duo-card__eyebrow { font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; display: block; }
+    .duo-card p { color: rgba(255,255,255,.8); font-size: .92rem; margin-bottom: 0; }
+    .duo-card strong { color: #fff; }
+
+    /* ── Notable names ────────────────────────────────────────────── */
+    .notable-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+
+    /* ── Reduced motion ───────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .donut-seg path, .bar-rect, .bar-val, .field-legend li a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html">Science<span>+</span></a>
+    <ul class="nav__links" id="site-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="presenters.html">Past Presenters</a></li>
+      <li><a href="moments.html">Quotes</a></li>
+      <li><a href="archive.html">Recordings</a></li>
+      <li><a href="stats.html">By the Numbers</a></li>
+      <li><a href="events.html" class="nav__cta">Upcoming Events</a></li>
+    </ul>
+    <button class="nav__burger" aria-label="Menu" aria-controls="site-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header__inner">
+    <span class="eyebrow">By the Numbers</span>
+    <h1>Science Plus, 2013 to 2026.</h1>
+    <p>The salon met in person in Ray's living room from 2013 to 2020. Since then it has met online. This is the record.</p>
+  </div>
+</div>
+
+<!-- HEADLINE NUMBERS -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="fade-in figure-row">
+      <div class="figure"><span class="figure__num" data-countup="80">80</span><span class="figure__lbl">Sessions</span></div>
+      <div class="figure"><span class="figure__num" data-countup="78">78</span><span class="figure__lbl">Presenters</span></div>
+      <div class="figure"><span class="figure__num" data-countup="14">14</span><span class="figure__lbl">Years</span></div>
+      <div class="figure"><span class="figure__num" data-countup="4">4</span><span class="figure__lbl">Repeat guests</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section">
+  <div class="container">
+    <div class="section-hd section-hd--center stats-section-intro">
+      <span class="eyebrow">Sessions by Year</span>
+      <h2>Sessions by year.</h2>
+      <p>Thirty-three sessions were held in person between 2013 and 2019. Forty-seven have been held online since 2020.</p>
+    </div>
+
+    <div class="chart-card fade-in">
+      <div class="timeline-scroll">
+        <svg class="timeline-svg" viewBox="0 0 980 340" role="img"
+             aria-labelledby="timelineTitle timelineDesc">
+          <title id="timelineTitle">Science Plus sessions per year, 2013 to 2026</title>
+          <desc id="timelineDesc">A bar chart of sessions held each year. In-person years 2013 through 2019 are shown in navy; online years 2020 through 2026, after the dashed divider, are shown in blue. Full values are listed in the table below the chart.</desc>
+
+          <!-- baseline -->
+          <line x1="20" y1="258" x2="960" y2="258" stroke="#DDD8D0" stroke-width="1.5"></line>
+
+          <!-- era divider between 2019 and 2020 -->
+          <line class="era-divider" x1="490" y1="30" x2="490" y2="258"></line>
+          <text class="era-label" x="480" y="22" text-anchor="end">In person</text>
+          <text class="era-label" x="500" y="22" text-anchor="start">Online</text>
+
+          <!-- 2013 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="20" y="30" width="67" height="228" aria-label="2013: 2 sessions, in person"></rect>
+            <rect class="bar-rect" x="34.1" y="210.50" width="38.9" height="47.50" fill="var(--navy)" rx="3"></rect>
+            <text class="bar-val" x="53.6" y="202">2</text>
+            <text class="bar-year" x="53.6" y="278">2013</text>
+          </g>
+          <!-- 2014 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="87.1" y="30" width="67" height="228" aria-label="2014: 7 sessions, in person"></rect>
+            <rect class="bar-rect" x="101.2" y="91.75" width="38.9" height="166.25" fill="var(--navy)" rx="3"></rect>
+            <text class="bar-val" x="120.7" y="84">7</text>
+            <text class="bar-year" x="120.7" y="278">2014</text>
+          </g>
+          <!-- 2015 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="154.3" y="30" width="67" height="228" aria-label="2015: 5 sessions, in person"></rect>
+            <rect class="bar-rect" x="168.4" y="139.25" width="38.9" height="118.75" fill="var(--navy)" rx="3"></rect>
+            <text class="bar-val" x="187.9" y="131">5</text>
+            <text class="bar-year" x="187.9" y="278">2015</text>
+          </g>
+          <!-- 2016 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="221.4" y="30" width="67" height="228" aria-label="2016: 4 sessions, in person"></rect>
+            <rect class="bar-rect" x="235.5" y="163.00" width="38.9" height="95.00" fill="var(--navy)" rx="3"></rect>
+            <text class="bar-val" x="255.0" y="155">4</text>
+            <text class="bar-year" x="255.0" y="278">2016</text>
+          </g>
+          <!-- 2017 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="288.6" y="30" width="67" height="228" aria-label="2017: 6 sessions, in person"></rect>
+            <rect class="bar-rect" x="302.7" y="115.50" width="38.9" height="142.50" fill="var(--navy)" rx="3"></rect>
+            <text class="bar-val" x="322.2" y="107">6</text>
+            <text class="bar-year" x="322.2" y="278">2017</text>
+          </g>
+          <!-- 2018 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="355.7" y="30" width="67" height="228" aria-label="2018: 3 sessions, in person"></rect>
+            <rect class="bar-rect" x="369.8" y="186.75" width="38.9" height="71.25" fill="var(--navy)" rx="3"></rect>
+            <text class="bar-val" x="389.3" y="179">3</text>
+            <text class="bar-year" x="389.3" y="278">2018</text>
+          </g>
+          <!-- 2019 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="422.9" y="30" width="67" height="228" aria-label="2019: 6 sessions, in person"></rect>
+            <rect class="bar-rect" x="437.0" y="115.50" width="38.9" height="142.50" fill="var(--navy)" rx="3"></rect>
+            <text class="bar-val" x="456.5" y="107">6</text>
+            <text class="bar-year" x="456.5" y="278">2019</text>
+          </g>
+          <!-- 2020 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="490.0" y="30" width="67" height="228" aria-label="2020: 7 sessions, first full year online"></rect>
+            <rect class="bar-rect" x="504.1" y="91.75" width="38.9" height="166.25" fill="var(--blue)" rx="3"></rect>
+            <text class="bar-val" x="523.6" y="84">7</text>
+            <text class="bar-year" x="523.6" y="278">2020</text>
+          </g>
+          <!-- 2021 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="557.1" y="30" width="67" height="228" aria-label="2021: 7 sessions, online"></rect>
+            <rect class="bar-rect" x="571.2" y="91.75" width="38.9" height="166.25" fill="var(--blue)" rx="3"></rect>
+            <text class="bar-val" x="590.7" y="84">7</text>
+            <text class="bar-year" x="590.7" y="278">2021</text>
+          </g>
+          <!-- 2022 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="624.3" y="30" width="67" height="228" aria-label="2022: 7 sessions, online"></rect>
+            <rect class="bar-rect" x="638.4" y="91.75" width="38.9" height="166.25" fill="var(--blue)" rx="3"></rect>
+            <text class="bar-val" x="657.9" y="84">7</text>
+            <text class="bar-year" x="657.9" y="278">2022</text>
+          </g>
+          <!-- 2023 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="691.4" y="30" width="67" height="228" aria-label="2023: 6 sessions, online"></rect>
+            <rect class="bar-rect" x="705.5" y="115.50" width="38.9" height="142.50" fill="var(--blue)" rx="3"></rect>
+            <text class="bar-val" x="725.0" y="108">6</text>
+            <text class="bar-year" x="725.0" y="278">2023</text>
+          </g>
+          <!-- 2024 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="758.6" y="30" width="67" height="228" aria-label="2024: 8 sessions, online"></rect>
+            <rect class="bar-rect" x="772.7" y="68.00" width="38.9" height="190.00" fill="var(--blue)" rx="3"></rect>
+            <text class="bar-val" x="792.2" y="60">8</text>
+            <text class="bar-year" x="792.2" y="278">2024</text>
+          </g>
+          <!-- 2025 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="825.7" y="30" width="67" height="228" aria-label="2025: 7 sessions, online"></rect>
+            <rect class="bar-rect" x="839.8" y="91.75" width="38.9" height="166.25" fill="var(--blue)" rx="3"></rect>
+            <text class="bar-val" x="859.3" y="84">7</text>
+            <text class="bar-year" x="859.3" y="278">2025</text>
+          </g>
+          <!-- 2026 -->
+          <g>
+            <rect class="bar-hit" tabindex="0" role="img" x="892.9" y="30" width="67" height="228" aria-label="2026: 5 sessions, online"></rect>
+            <rect class="bar-rect" x="907.0" y="139.25" width="38.9" height="118.75" fill="var(--blue)" rx="3"></rect>
+            <text class="bar-val" x="926.5" y="131">5</text>
+            <text class="bar-year" x="926.5" y="278">2026</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="timeline-legend" aria-hidden="true">
+        <span><span class="chart-legend-swatch li"></span>In person, 2013&ndash;2019</span>
+        <span><span class="chart-legend-swatch zm"></span>Online, 2020&ndash;2026</span>
+      </div>
+
+      <p class="chart-readout" id="timelineReadout" aria-live="polite"></p>
+
+      <table class="sr-only">
+        <caption>Science Plus sessions per year</caption>
+        <thead><tr><th scope="col">Year</th><th scope="col">Sessions</th><th scope="col">Era</th></tr></thead>
+        <tbody>
+          <tr><td>2013</td><td>2</td><td>In person</td></tr>
+          <tr><td>2014</td><td>7</td><td>In person</td></tr>
+          <tr><td>2015</td><td>5</td><td>In person</td></tr>
+          <tr><td>2016</td><td>4</td><td>In person</td></tr>
+          <tr><td>2017</td><td>6</td><td>In person</td></tr>
+          <tr><td>2018</td><td>3</td><td>In person</td></tr>
+          <tr><td>2019</td><td>6</td><td>In person</td></tr>
+          <tr><td>2020</td><td>7</td><td>Online</td></tr>
+          <tr><td>2021</td><td>7</td><td>Online</td></tr>
+          <tr><td>2022</td><td>7</td><td>Online</td></tr>
+          <tr><td>2023</td><td>6</td><td>Online</td></tr>
+          <tr><td>2024</td><td>8</td><td>Online</td></tr>
+          <tr><td>2025</td><td>7</td><td>Online</td></tr>
+          <tr><td>2026</td><td>5</td><td>Online</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FIELDS OF INQUIRY DONUT -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-hd section-hd--center stats-section-intro">
+      <span class="eyebrow">Fields of Inquiry</span>
+      <h2>Fields of inquiry.</h2>
+      <p>These are 92 subject tags across the series. Note: some fields overlap. Select a field to see its presenters.</p>
+    </div>
+
+    <div class="chart-card fade-in">
+      <div class="donut-wrap">
+        <svg class="donut-svg" viewBox="0 0 340 340" role="img" aria-labelledby="donutTitle donutDesc">
+          <title id="donutTitle">Fields of inquiry across the Science Plus series</title>
+          <desc id="donutDesc">A donut chart of subject tags: Physics 16, Medicine and Genomics 14, Space and Planets 10, Climate and Environment 9, Economics 9, Biology and Evolution 7, Geopolitics 7, Neuroscience 6, AI and Technology 5, Mathematics 5, Philosophy 4. Ninety-two tags in total. Full values are listed in the table below. Each segment links to a filtered view of past presenters.</desc>
+
+          <a class="donut-seg" data-token="physics" href="presenters.html?filter=physics" aria-label="Physics: 16 tags. Browse physics presenters.">
+            <path d="M 170.00 20.00 A 150 150 0 0 1 303.18 100.99 L 251.69 127.67 A 92 92 0 0 0 170.00 78.00 Z" fill="#1A2744"><title>Physics — 16</title></path>
+          </a>
+
+          <a class="donut-seg" data-token="medicine" href="presenters.html?filter=medicine" aria-label="Medicine and Genomics: 14 tags. Browse medicine and genomics presenters.">
+            <path d="M 303.18 100.99 A 150 150 0 0 1 303.18 239.01 L 251.69 212.33 A 92 92 0 0 0 251.69 127.67 Z" fill="#C4923A"><title>Medicine &amp; Genomics — 14</title></path>
+          </a>
+
+          <a class="donut-seg" data-token="space" href="presenters.html?filter=space" aria-label="Space and Planets: 10 tags. Browse space and planets presenters.">
+            <path d="M 303.18 239.01 A 150 150 0 0 1 229.76 307.58 L 206.65 254.38 A 92 92 0 0 0 251.69 212.33 Z" fill="#2D5A8E"><title>Space &amp; Planets — 10</title></path>
+          </a>
+
+          <a class="donut-seg" data-token="climate" href="presenters.html?filter=climate" aria-label="Climate and Environment: 9 tags. Browse climate and environment presenters.">
+            <path d="M 229.76 307.58 A 150 150 0 0 1 139.48 316.86 L 151.28 260.08 A 92 92 0 0 0 206.65 254.38 Z" fill="#4C7A63"><title>Climate &amp; Environment — 9</title></path>
+          </a>
+
+          <a class="donut-seg" data-token="economics" href="presenters.html?filter=economics" aria-label="Economics: 9 tags. Browse economics presenters.">
+            <path d="M 139.48 316.86 A 150 150 0 0 1 60.37 272.38 L 102.76 232.79 A 92 92 0 0 0 151.28 260.08 Z" fill="#B5602F"><title>Economics — 9</title></path>
+          </a>
+
+          <a class="donut-seg" data-token="biology" href="presenters.html?filter=biology" aria-label="Biology and Evolution: 7 tags. Browse biology and evolution presenters.">
+            <path d="M 60.37 272.38 A 150 150 0 0 1 25.56 210.47 L 81.41 194.82 A 92 92 0 0 0 102.76 232.79 Z" fill="#7C8A4C"><title>Biology &amp; Evolution — 7</title></path>
+          </a>
+
+          <a class="donut-seg" data-token="geopolitics" href="presenters.html?filter=geopolitics" aria-label="Geopolitics: 7 tags. Browse geopolitics presenters.">
+            <path d="M 25.56 210.47 A 150 150 0 0 1 23.14 139.48 L 79.92 151.28 A 92 92 0 0 0 81.41 194.82 Z" fill="#7B3F5E"><title>Geopolitics — 7</title></path>
+          </a>
+
+          <a class="donut-seg" data-token="neuroscience" href="presenters.html?filter=neuroscience" aria-label="Neuroscience: 6 tags. Browse neuroscience presenters.">
+            <path d="M 23.14 139.48 A 150 150 0 0 1 47.45 83.50 L 94.84 116.95 A 92 92 0 0 0 79.92 151.28 Z" fill="#C17767"><title>Neuroscience — 6</title></path>
+          </a>
+
+          <a class="donut-seg" data-token="ai" href="presenters.html?filter=ai" aria-label="AI and Technology: 5 tags. Browse ai and technology presenters.">
+            <path d="M 47.45 83.50 A 150 150 0 0 1 83.50 47.45 L 116.95 94.84 A 92 92 0 0 0 94.84 116.95 Z" fill="#3E7487"><title>AI &amp; Technology — 5</title></path>
+          </a>
+
+          <a class="donut-seg" data-token="mathematics" href="presenters.html?filter=mathematics" aria-label="Mathematics: 5 tags. Browse mathematics presenters.">
+            <path d="M 83.50 47.45 A 150 150 0 0 1 129.53 25.56 L 145.18 81.41 A 92 92 0 0 0 116.95 94.84 Z" fill="#8C6B9C"><title>Mathematics — 5</title></path>
+          </a>
+
+          <a class="donut-seg" data-token="philosophy" href="presenters.html?filter=philosophy" aria-label="Philosophy: 4 tags. Browse philosophy presenters.">
+            <path d="M 129.53 25.56 A 150 150 0 0 1 170.00 20.00 L 170.00 78.00 A 92 92 0 0 0 145.18 81.41 Z" fill="#5B5A8C"><title>Philosophy — 4</title></path>
+          </a>
+
+          <text class="donut-center-num" x="170" y="163" id="donutCenterNum">92</text>
+          <text class="donut-center-lbl" x="170" y="185">subject tags</text>
+        </svg>
+
+        <ul class="field-legend">
+          <li><a data-token="physics" href="presenters.html?filter=physics"><span class="chart-legend-swatch" style="background:#1A2744"></span><span class="field-legend__name">Physics</span><span class="field-legend__count">16</span><span class="field-legend__arrow" aria-hidden="true">&rarr;</span></a></li>
+          <li><a data-token="medicine" href="presenters.html?filter=medicine"><span class="chart-legend-swatch" style="background:#C4923A"></span><span class="field-legend__name">Medicine &amp; Genomics</span><span class="field-legend__count">14</span><span class="field-legend__arrow" aria-hidden="true">&rarr;</span></a></li>
+          <li><a data-token="space" href="presenters.html?filter=space"><span class="chart-legend-swatch" style="background:#2D5A8E"></span><span class="field-legend__name">Space &amp; Planets</span><span class="field-legend__count">10</span><span class="field-legend__arrow" aria-hidden="true">&rarr;</span></a></li>
+          <li><a data-token="climate" href="presenters.html?filter=climate"><span class="chart-legend-swatch" style="background:#4C7A63"></span><span class="field-legend__name">Climate &amp; Environment</span><span class="field-legend__count">9</span><span class="field-legend__arrow" aria-hidden="true">&rarr;</span></a></li>
+          <li><a data-token="economics" href="presenters.html?filter=economics"><span class="chart-legend-swatch" style="background:#B5602F"></span><span class="field-legend__name">Economics</span><span class="field-legend__count">9</span><span class="field-legend__arrow" aria-hidden="true">&rarr;</span></a></li>
+          <li><a data-token="biology" href="presenters.html?filter=biology"><span class="chart-legend-swatch" style="background:#7C8A4C"></span><span class="field-legend__name">Biology &amp; Evolution</span><span class="field-legend__count">7</span><span class="field-legend__arrow" aria-hidden="true">&rarr;</span></a></li>
+          <li><a data-token="geopolitics" href="presenters.html?filter=geopolitics"><span class="chart-legend-swatch" style="background:#7B3F5E"></span><span class="field-legend__name">Geopolitics</span><span class="field-legend__count">7</span><span class="field-legend__arrow" aria-hidden="true">&rarr;</span></a></li>
+          <li><a data-token="neuroscience" href="presenters.html?filter=neuroscience"><span class="chart-legend-swatch" style="background:#C17767"></span><span class="field-legend__name">Neuroscience</span><span class="field-legend__count">6</span><span class="field-legend__arrow" aria-hidden="true">&rarr;</span></a></li>
+          <li><a data-token="ai" href="presenters.html?filter=ai"><span class="chart-legend-swatch" style="background:#3E7487"></span><span class="field-legend__name">AI &amp; Technology</span><span class="field-legend__count">5</span><span class="field-legend__arrow" aria-hidden="true">&rarr;</span></a></li>
+          <li><a data-token="mathematics" href="presenters.html?filter=mathematics"><span class="chart-legend-swatch" style="background:#8C6B9C"></span><span class="field-legend__name">Mathematics</span><span class="field-legend__count">5</span><span class="field-legend__arrow" aria-hidden="true">&rarr;</span></a></li>
+          <li><a data-token="philosophy" href="presenters.html?filter=philosophy"><span class="chart-legend-swatch" style="background:#5B5A8C"></span><span class="field-legend__name">Philosophy</span><span class="field-legend__count">4</span><span class="field-legend__arrow" aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+      </div>
+
+      <p class="chart-readout" id="donutReadout" aria-live="polite"></p>
+
+      <table class="sr-only">
+        <caption>Fields of inquiry: subject tags applied across the Science Plus series</caption>
+        <thead><tr><th scope="col">Field</th><th scope="col">Tag count</th></tr></thead>
+        <tbody>
+          <tr><td>Physics</td><td>16</td></tr>
+          <tr><td>Medicine &amp; Genomics</td><td>14</td></tr>
+          <tr><td>Space &amp; Planets</td><td>10</td></tr>
+          <tr><td>Climate &amp; Environment</td><td>9</td></tr>
+          <tr><td>Economics</td><td>9</td></tr>
+          <tr><td>Biology &amp; Evolution</td><td>7</td></tr>
+          <tr><td>Geopolitics</td><td>7</td></tr>
+          <tr><td>Neuroscience</td><td>6</td></tr>
+          <tr><td>AI &amp; Technology</td><td>5</td></tr>
+          <tr><td>Mathematics</td><td>5</td></tr>
+          <tr><td>Philosophy</td><td>4</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- INSTITUTIONS + HONOURS -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2">
+
+      <div class="chart-card fade-in">
+        <span class="sidebar-card__label">Institutions Represented</span>
+        <p style="font-size:.85rem; color:var(--muted); margin-bottom:1.25rem;">Counted from the institutions named in each presenter's description. Provisional &mdash; some descriptions do not yet name an affiliation.</p>
+        <div class="inst-list" role="img" aria-labelledby="instTitle">
+          <span id="instTitle" class="sr-only">Bar chart of sessions per institution: UBC 19, New York University 4, Simon Fraser University 4, Perimeter Institute 3, University of Toronto 3, Caltech and NASA 3, McGill 1, MIT 1, Stanford 1.</span>
+          <div class="inst-row"><div class="inst-row__name">UBC</div><div class="inst-row__track"><div class="inst-row__fill" style="width:100%"></div></div><div class="inst-row__num">19</div></div>
+          <div class="inst-row"><div class="inst-row__name">New York University</div><div class="inst-row__track"><div class="inst-row__fill" style="width:21%"></div></div><div class="inst-row__num">4</div></div>
+          <div class="inst-row"><div class="inst-row__name">Simon Fraser University</div><div class="inst-row__track"><div class="inst-row__fill" style="width:21%"></div></div><div class="inst-row__num">4</div></div>
+          <div class="inst-row"><div class="inst-row__name">Perimeter Institute</div><div class="inst-row__track"><div class="inst-row__fill" style="width:16%"></div></div><div class="inst-row__num">3</div></div>
+          <div class="inst-row"><div class="inst-row__name">University of Toronto</div><div class="inst-row__track"><div class="inst-row__fill" style="width:16%"></div></div><div class="inst-row__num">3</div></div>
+          <div class="inst-row"><div class="inst-row__name">Caltech / NASA</div><div class="inst-row__track"><div class="inst-row__fill" style="width:16%"></div></div><div class="inst-row__num">3</div></div>
+          <div class="inst-row"><div class="inst-row__name">McGill</div><div class="inst-row__track"><div class="inst-row__fill" style="width:5%"></div></div><div class="inst-row__num">1</div></div>
+          <div class="inst-row"><div class="inst-row__name">MIT</div><div class="inst-row__track"><div class="inst-row__fill" style="width:5%"></div></div><div class="inst-row__num">1</div></div>
+          <div class="inst-row"><div class="inst-row__name">Stanford</div><div class="inst-row__track"><div class="inst-row__fill" style="width:5%"></div></div><div class="inst-row__num">1</div></div>
+        </div>
+      </div>
+
+      <div class="chart-card fade-in">
+        <span class="sidebar-card__label">Honours on Record</span>
+        <p style="font-size:.85rem; color:var(--muted); margin-bottom:1.25rem;">Recorded on the presenters page. Not a complete list.</p>
+        <ul class="honour-list">
+          <li class="honour-item">
+            <span class="honour-item__count">2</span>
+            <span>
+              <span class="honour-item__name">Fellow of the Royal Society of Canada</span>
+              <span class="honour-item__who">Janice Stein, Kumar Murty</span>
+            </span>
+          </li>
+          <li class="honour-item">
+            <span class="honour-item__count">2</span>
+            <span>
+              <span class="honour-item__name">Order of Canada</span>
+              <span class="honour-item__who">Janice Stein, Ron Burnett</span>
+            </span>
+          </li>
+          <li class="honour-item">
+            <span class="honour-item__count">1</span>
+            <span>
+              <span class="honour-item__name">Guggenheim Fellow</span>
+              <span class="honour-item__who">Tim Maudlin</span>
+            </span>
+          </li>
+          <li class="honour-item">
+            <span class="honour-item__count">1</span>
+            <span>
+              <span class="honour-item__name">Canada Research Chair</span>
+              <span class="honour-item__who">Marco Marra</span>
+            </span>
+          </li>
+          <li class="honour-item">
+            <span class="honour-item__count">1</span>
+            <span>
+              <span class="honour-item__name">Hong Kong Young Scientist Award</span>
+              <span class="honour-item__who">Amruth Alfred</span>
+            </span>
+          </li>
+          <li class="honour-item">
+            <span class="honour-item__count">1</span>
+            <span>
+              <span class="honour-item__name">Distinguished University Scholar</span>
+              <span class="honour-item__who">Lara Boyd</span>
+            </span>
+          </li>
+          <li class="honour-item">
+            <span class="honour-item__count">3</span>
+            <span>
+              <span class="honour-item__name">Named or endowed chairs</span>
+              <span class="honour-item__who">Neil Shubin, Leonard Susskind, James Galbraith</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ENCORE PRESENTERS -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-hd section-hd--center stats-section-intro">
+      <span class="eyebrow">Return Visits</span>
+      <h2>Presenters who returned.</h2>
+      <p>Four presenters have given a second session.</p>
+    </div>
+
+    <div class="encore-grid fade-in">
+      <div class="encore-card">
+        <div class="encore-card__name">Robert Raussendorf</div>
+        <div class="encore-card__note">Quantum computing theorist, UBC &amp; Perimeter Institute</div>
+        <div class="encore-card__years"><span class="encore-card__year">2014</span><span class="encore-card__year">2025</span></div>
+      </div>
+      <div class="encore-card">
+        <div class="encore-card__name">Howard Feldman</div>
+        <div class="encore-card__note">Neurosciences, UC San Diego &amp; UBC</div>
+        <div class="encore-card__years"><span class="encore-card__year">2015</span><span class="encore-card__year">2024</span></div>
+      </div>
+      <div class="encore-card">
+        <div class="encore-card__name">Marco Marra</div>
+        <div class="encore-card__note">BC Cancer Agency Genome Sciences Centre</div>
+        <div class="encore-card__years"><span class="encore-card__year">2017</span><span class="encore-card__year">2020</span></div>
+      </div>
+      <div class="encore-card">
+        <div class="encore-card__name">Fred Brauer</div>
+        <div class="encore-card__note">Emeritus Professor of Mathematics, UBC</div>
+        <div class="encore-card__years"><span class="encore-card__year">2017</span><span class="encore-card__year">2019</span></div>
+      </div>
+    </div>
+
+    <div class="duo-card fade-in">
+      <span class="duo-card__eyebrow">Father and Daughter</span>
+      <p><strong>Charles Beichman</strong> presented on the James Webb Space Telescope in February 2022. In March 2023 his daughter <strong>Annabel Beichman</strong> presented on the genomes of endangered marine mammals. Thirteen months apart, to the same salon.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOTABLE NAMES -->
+<section class="section">
+  <div class="container">
+    <div class="section-hd section-hd--center stats-section-intro">
+      <span class="eyebrow">Some of the Presenters</span>
+      <h2>A few of the presenters.</h2>
+      <p>Drawn from the full list on the presenters page.</p>
+    </div>
+
+    <div class="notable-grid fade-in">
+      <div class="card"><div class="card__body">
+        <span class="card__tag">Physics</span>
+        <div class="card__date">October 2020</div>
+        <h3 class="card__title">Leonard Susskind</h3>
+        <p class="card__excerpt">Stanford's Felix Bloch Professor of Theoretical Physics, one of the founders of string theory and the holographic principle, on string theory, black holes and the landscape, in an open Q&amp;A.</p>
+      </div></div>
+
+      <div class="card"><div class="card__body">
+        <span class="card__tag">Climate &amp; Environment</span>
+        <div class="card__date">October 2019</div>
+        <h3 class="card__title">Suzanne Simard</h3>
+        <p class="card__excerpt">The UBC ecologist behind <em>Finding the Mother Tree</em> explained how trees communicate and share resources through underground fungal networks.</p>
+      </div></div>
+
+      <div class="card"><div class="card__body">
+        <span class="card__tag">Biology &amp; Evolution</span>
+        <div class="card__date">January 2023</div>
+        <h3 class="card__title">Neil Shubin</h3>
+        <p class="card__excerpt">University of Chicago paleontologist, co-discoverer of Tiktaalik &mdash; the "fish with hands" &mdash; and author of <em>Your Inner Fish</em>, which gave the session its name.</p>
+      </div></div>
+
+      <div class="card"><div class="card__body">
+        <span class="card__tag">Medicine &amp; Genomics</span>
+        <div class="card__date">December 2022</div>
+        <h3 class="card__title">Michael Hayden</h3>
+        <p class="card__excerpt">A world authority on the genetics of Huntington's disease, UBC's Michael Hayden made the case that no disease is hopeless anymore.</p>
+      </div></div>
+
+      <div class="card"><div class="card__body">
+        <span class="card__tag">Medicine &amp; Genomics</span>
+        <div class="card__date">Nov. 2020 &amp; May 2017</div>
+        <h3 class="card__title">Marco Marra</h3>
+        <p class="card__excerpt">Director of the BC Cancer Agency Genome Sciences Centre, whose team sequenced the SARS coronavirus genome in 2003, spoke twice &mdash; on cancer genomics and the Personalized OncoGenomics Project.</p>
+      </div></div>
+
+      <div class="card"><div class="card__body">
+        <span class="card__tag">Physics</span>
+        <div class="card__date">October 2021</div>
+        <h3 class="card__title">Neil Turok</h3>
+        <p class="card__excerpt">The former Director of the Perimeter Institute for Theoretical Physics ranged from personal history to the shape of the universe, and his work building science and mathematics capacity in Africa.</p>
+      </div></div>
+
+      <div class="card"><div class="card__body">
+        <span class="card__tag">Philosophy</span>
+        <div class="card__date">June 2022</div>
+        <h3 class="card__title">Rebecca Goldstein</h3>
+        <p class="card__excerpt">Philosopher and author, who spoke on <em>Plato at the Googleplex</em> and on the drive that propels human beings to want to matter.</p>
+      </div></div>
+
+      <div class="card"><div class="card__body">
+        <span class="card__tag">Geopolitics</span>
+        <div class="card__date">June 2025</div>
+        <h3 class="card__title">Janice Stein</h3>
+        <p class="card__excerpt">Founding Director of the Munk School of Global Affairs &amp; Public Policy, a Fellow of the Royal Society of Canada and member of the Order of Canada, on Putin and world politics.</p>
+      </div></div>
+
+      <div class="card"><div class="card__body">
+        <span class="card__tag">Physics</span>
+        <div class="card__date">September 2022</div>
+        <h3 class="card__title">Michel Laberge</h3>
+        <p class="card__excerpt">Founder of General Fusion, Burnaby, BC, on the company's progress and the wider global race for commercial fusion power.</p>
+      </div></div>
+
+      <div class="card"><div class="card__body">
+        <span class="card__tag">Space &amp; Planets</span>
+        <div class="card__date">Feb. 2022 &amp; Mar. 2023</div>
+        <h3 class="card__title">Charles &amp; Annabel Beichman</h3>
+        <p class="card__excerpt">Charles presented on the James Webb Space Telescope weeks after its launch. His daughter Annabel presented a year later on the genomes of endangered marine mammals.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="section section--dark">
+  <div class="container text-center">
+    <span class="eyebrow">The Series</span>
+    <h2 style="margin-bottom:1rem;">The next session is being arranged.</h2>
+    <p style="color:rgba(255,255,255,.72); max-width:560px; margin:0 auto 2rem;">Fourteen years of the usual eclectic mixture of science, politics and history.</p>
+    <a href="presenters.html" class="btn btn--gold">Browse All 78 Presenters &rarr;</a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <div class="footer__brand">Science<span>+</span></div>
+      <p class="footer__desc">A curated lecture series hosted by Ray Schachter, bringing leading minds together for intimate online conversations on science, geopolitics, history, medicine, and philosophy.</p>
+    </div>
+    <div>
+      <span class="footer__col-title">Explore</span>
+      <ul class="footer__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="presenters.html">Past Presenters</a></li>
+        <li><a href="moments.html">Quotes</a></li>
+        <li><a href="archive.html">Recordings</a></li>
+        <li><a href="stats.html">By the Numbers</a></li>
+        <li><a href="events.html">Upcoming Events</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer__col-title">Connect</span>
+      <ul class="footer__links">
+        <li><a href="events.html">Join an Upcoming Session</a></li>
+        <li><a href="archive.html#request-access">Request a Recording</a></li>
+        <li><a href="about.html">About Ray Schachter</a></li>
+        <li><a href="mailto:schachter.ray@gmail.com">Email Ray</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Science Plus · Hosted by Ray Schachter · Vancouver, BC</span>
+    <span>A community of curious minds.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+(function () {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── Count-up on scroll into view ──────────────────────────────
+  var counters = document.querySelectorAll('[data-countup]');
+  if (!reduceMotion && 'IntersectionObserver' in window && counters.length) {
+    counters.forEach(function (el) {
+      el.dataset.final = el.textContent.trim();
+      el.textContent = '0';
+    });
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.dataset.final, 10) || 0;
+        var start = null;
+        var duration = 1100;
+        function step(ts) {
+          if (start === null) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target);
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = target;
+          }
+        }
+        requestAnimationFrame(step);
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { obs.observe(el); });
+  }
+
+  // ── Timeline bar readout ──────────────────────────────────────
+  var timelineReadout = document.getElementById('timelineReadout');
+  var barHits = document.querySelectorAll('.bar-hit');
+  function setTimelineReadout(el) {
+    barHits.forEach(function (b) { b.classList.remove('active'); });
+    el.classList.add('active');
+    if (timelineReadout) timelineReadout.textContent = el.getAttribute('aria-label');
+  }
+  barHits.forEach(function (b) {
+    b.addEventListener('mouseenter', function () { setTimelineReadout(b); });
+    b.addEventListener('focus', function () { setTimelineReadout(b); });
+  });
+
+  // ── Donut segment readout + legend sync ────────────────────────
+  var donutReadout = document.getElementById('donutReadout');
+  var donutSegs = document.querySelectorAll('.donut-seg');
+  var legendLinks = document.querySelectorAll('.field-legend a');
+
+  function clearActive() {
+    donutSegs.forEach(function (s) { s.classList.remove('active'); });
+    legendLinks.forEach(function (l) { l.parentElement.style.background = ''; });
+  }
+  function activateToken(token, label) {
+    clearActive();
+    donutSegs.forEach(function (s) { if (s.dataset.token === token) s.classList.add('active'); });
+    legendLinks.forEach(function (l) { if (l.dataset.token === token) l.style.background = 'var(--bg-alt)'; });
+    if (donutReadout) donutReadout.textContent = label;
+  }
+
+  donutSegs.forEach(function (seg) {
+    var handler = function () { activateToken(seg.dataset.token, seg.getAttribute('aria-label')); };
+    seg.addEventListener('mouseenter', handler);
+    seg.addEventListener('focus', handler);
+  });
+  legendLinks.forEach(function (l) {
+    var handler = function () { activateToken(l.dataset.token, l.getAttribute('aria-label') || l.textContent.trim()); };
+    l.addEventListener('mouseenter', handler);
+    l.addEventListener('focus', handler);
+  });
+})();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

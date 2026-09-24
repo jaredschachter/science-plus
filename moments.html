@@ -3,29 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moments from Science Plus</title>
+  <title>Quotes — Science Plus</title>
   <meta name="description" content="Memorable quotes, big ideas, and editorial highlights from Science Plus sessions." />
+  <meta property="og:title" content="Quotes — Science Plus" />
+  <meta property="og:description" content="Memorable quotes, big ideas, and editorial highlights from Science Plus sessions." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://science-plus.ca/moments" />
+  <meta property="og:url" content="https://science-plus.ca/moments" />
+  <meta property="og:image" content="https://science-plus.ca/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Science Plus" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231A2744'/%3E%3Ctext x='32' y='44' font-family='Georgia, serif' font-size='30' font-weight='700' fill='%23C4923A' text-anchor='middle'%3ES%2B%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- NAV -->
 <nav class="nav">
   <div class="nav__inner">
     <a class="nav__brand" href="index.html">Science<span>+</span></a>
-    <ul class="nav__links">
+    <ul class="nav__links" id="site-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="presenters.html">Past Presenters</a></li>
-      <li><a href="moments.html">Moments</a></li>
+      <li><a href="moments.html">Quotes</a></li>
       <li><a href="archive.html">Recordings</a></li>
+      <li><a href="stats.html">By the Numbers</a></li>
       <li><a href="events.html" class="nav__cta">Upcoming Events</a></li>
     </ul>
-    <button class="nav__burger" aria-label="Menu">
+    <button class="nav__burger" aria-label="Menu" aria-controls="site-menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+
+<main id="main">
 
 <!-- PAGE HEADER -->
 <div class="page-header">
@@ -40,26 +59,10 @@
 <div style="background:var(--bg-alt); border-bottom:1px solid var(--border); padding:.9rem 1.5rem;">
   <div style="max-width:1120px; margin:0 auto;">
     <p style="font-style:italic; color:var(--muted); font-size:.875rem; margin:0;">
-      Speaker quotes will be added as sessions are transcribed. If you attended a session and remember something worth preserving, <a href="archive.html">write to Ray</a>.
+      Speaker quotes will be added as sessions are transcribed. If you attended a session and remember something worth preserving, <a href="archive.html#request-access">write to Ray</a>.
     </p>
   </div>
 </div>
-
-<!-- LEGEND -->
-<section style="padding:2.5rem 1.5rem 0;">
-  <div class="container">
-    <div style="display:flex; gap:1.5rem; flex-wrap:wrap; align-items:center;">
-      <div style="display:flex; align-items:center; gap:.5rem;">
-        <div style="width:14px; height:14px; background:#FDF6EC; border:1.5px solid rgba(196,146,58,0.35); border-radius:3px; flex-shrink:0;"></div>
-        <span style="font-size:.78rem; color:var(--muted);"><strong style="color:var(--text);">Why Ray chose this topic</strong> — Ray's personal framing from his introductory notes</span>
-      </div>
-      <div style="display:flex; align-items:center; gap:.5rem;">
-        <div style="width:14px; height:14px; background:var(--navy); border:1.5px dashed rgba(255,255,255,0.25); border-radius:3px; flex-shrink:0;"></div>
-        <span style="font-size:.78rem; color:var(--muted);"><strong style="color:var(--text);">From the session</strong> — direct speaker quotes, to be filled from recordings</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- MOMENTS GRID -->
 <section class="section">
@@ -67,71 +70,77 @@
     <div class="moments-grid">
 
       <!-- ═══════════════════════════════════════
-           TYPE A — "Why Ray Chose This Topic"
+           "Why Ray Chose This Topic"
            Gold/amber cards — Ray's own framing
            ═══════════════════════════════════════ -->
 
       <div class="moment-a fade-in">
-        <span class="moment-a__label">Why Ray chose this topic</span>
+        <span class="moment-a__label">Why I chose this topic</span>
         <p class="moment-a__quote">Being introduced to the best humanity has to offer — in science, culture, music, and literature — gives life an existential purpose and gives us hope of a better road ahead.</p>
         <div class="moment-a__attr">Ray Schachter</div>
         <div class="moment-a__session">On the purpose of Science Plus</div>
       </div>
 
       <div class="moment-a fade-in">
-        <span class="moment-a__label">Why Ray chose this topic · Dec 2025</span>
+        <span class="moment-a__label">Why I chose this topic · Dec 2025</span>
         <p class="moment-a__quote">We care because we are curious — and unification would confirm our fundamental beliefs that we can and will truly understand nature. It does seem intimidating that if we discover the theory of everything, we may know as much as we can possibly know about the universe.</p>
         <div class="moment-a__attr">Ray Schachter</div>
         <div class="moment-a__session">Introducing Bianca Dittrich — Theory of Everything</div>
       </div>
 
       <div class="moment-a fade-in">
-        <span class="moment-a__label">Why Ray chose this topic · Oct 2025</span>
+        <span class="moment-a__label">Why I chose this topic · Oct 2025</span>
         <p class="moment-a__quote">There has been a lot of media coverage — hype? — on quantum computing in the past 10 years. This reminds me of the joke about fusion: it is 20 years away and always will be.</p>
         <div class="moment-a__attr">Ray Schachter</div>
         <div class="moment-a__session">Introducing Robert Raussendorf — Quantum Computing</div>
       </div>
 
       <div class="moment-a fade-in">
-        <span class="moment-a__label">Why Ray chose this topic · Jan 2026</span>
+        <span class="moment-a__label">Why I chose this topic · Jan 2026</span>
         <p class="moment-a__quote">Billions have been spent on missions to Mars. The prospect of civilizations on Mars emerged with the observation of 'canals' seen from earth — eerily prescient when we see the photos from Perseverance. This is a truly special event.</p>
         <div class="moment-a__attr">Ray Schachter</div>
         <div class="moment-a__session">Introducing Graziella Caprarelli — Water and Life on Mars</div>
       </div>
 
       <div class="moment-a fade-in">
-        <span class="moment-a__label">Why Ray chose this topic · Feb 2026</span>
+        <span class="moment-a__label">Why I chose this topic · Feb 2026</span>
         <p class="moment-a__quote">The world is at a crossroads. In the past Science Plus has invited presentations on politics, geopolitics, social science and the environment. Responding to this current and existential crisis, we are fortunate indeed to have Andrew as our guest.</p>
         <div class="moment-a__attr">Ray Schachter</div>
         <div class="moment-a__session">Introducing Andrew Standley — Global Power Rivalries</div>
       </div>
 
       <div class="moment-a fade-in">
-        <span class="moment-a__label">Why Ray chose this topic · Sept 2025</span>
+        <span class="moment-a__label">Why I chose this topic · Sept 2025</span>
         <p class="moment-a__quote">Even if the technical part of presentations was difficult, the feeling of awe listening to these folks was palpable.</p>
         <div class="moment-a__attr">Ray Schachter</div>
         <div class="moment-a__session">On making science accessible — the 2025 season</div>
       </div>
 
       <div class="moment-a fade-in">
-        <span class="moment-a__label">Why Ray chose this topic · Sept 2025</span>
+        <span class="moment-a__label">Why I chose this topic · Sept 2025</span>
         <p class="moment-a__quote">Science and culture are being attacked almost daily. There is no need to say more. I leave it to you to form your opinions and take whatever action you think useful.</p>
         <div class="moment-a__attr">Ray Schachter</div>
         <div class="moment-a__session">On science under pressure</div>
       </div>
 
+      <!-- Speaker quotes: transcription in progress -->
+      <div class="moment-b fade-in">
+        <span class="moment-b__badge">From the Sessions</span>
+        <p class="moment-b__placeholder">Speaker quotes are being transcribed — check back soon, or send Ray a line you remember.</p>
+        <hr class="moment-b__divider" />
+        <p class="moment-b__hint"><a href="archive.html#request-access">Share a quote you remember →</a></p>
+      </div>
 
       <!-- ═══════════════════════════════════════
-           TYPE B — "From the Session"
-           Dark navy placeholder cards — awaiting
-           direct speaker quotes from recordings.
-
-           TO POPULATE: Replace the placeholder
-           text below with actual quotes from
-           session recordings or transcripts.
+           TYPE B — "From the Session" placeholder
+           cards, collapsed until real speaker
+           quotes are transcribed. TO POPULATE:
+           replace the bracketed placeholder text
+           with actual quotes from session
+           recordings or transcripts, then restore
+           the cards below into the grid above.
            Contact Ray Schachter for recording
            access: see archive.html
-           ═══════════════════════════════════════ -->
 
       <div class="moment-b fade-in">
         <span class="moment-b__badge">From the Session</span>
@@ -214,6 +223,8 @@
         <p class="moment-b__hint">Allen Institute for Brain Science</p>
       </div>
 
+      ═══════════════════════════════════════ -->
+
     </div>
   </div>
 </section>
@@ -224,16 +235,18 @@
     <span class="eyebrow">Help fill these in</span>
     <h2>Remember something from a session?</h2>
     <p style="color:var(--muted); margin:1rem 0 2rem;">If you attended a past session and a line stuck with you — something a speaker said that reframed the way you think about a problem — Ray wants to hear it. These cards are waiting.</p>
-    <a href="archive.html" class="btn btn--navy">Contact Ray about recordings →</a>
+    <a href="archive.html#request-access" class="btn btn--navy">Contact Ray about recordings →</a>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer__grid">
     <div>
       <div class="footer__brand">Science<span>+</span></div>
-      <p class="footer__desc">A curated lecture series hosted by Ray Schachter, bringing leading minds together for intimate Zoom conversations on science, geopolitics, history, medicine, and philosophy.</p>
+      <p class="footer__desc">A curated lecture series hosted by Ray Schachter, bringing leading minds together for intimate online conversations on science, geopolitics, history, medicine, and philosophy.</p>
     </div>
     <div>
       <span class="footer__col-title">Explore</span>
@@ -241,16 +254,19 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="presenters.html">Past Presenters</a></li>
-        <li><a href="moments.html">Moments</a></li>
-        <li><a href="events.html">Upcoming Events</a></li>
+        <li><a href="moments.html">Quotes</a></li>
         <li><a href="archive.html">Recordings</a></li>
+        <li><a href="stats.html">By the Numbers</a></li>
+        <li><a href="events.html">Upcoming Events</a></li>
       </ul>
     </div>
     <div>
       <span class="footer__col-title">Connect</span>
       <ul class="footer__links">
         <li><a href="events.html">Join an Upcoming Session</a></li>
-        <li><a href="archive.html">Request a Recording</a></li>
+        <li><a href="archive.html#request-access">Request a Recording</a></li>
+        <li><a href="about.html">About Ray Schachter</a></li>
+        <li><a href="mailto:schachter.ray@gmail.com">Email Ray</a></li>
       </ul>
     </div>
   </div>
@@ -261,5 +277,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

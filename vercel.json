@@ -1,4 +1,10 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/annabel",
+      "destination": "/sessions/2023-03-28-annabel-beichman"
+    }
+  ]
 }
