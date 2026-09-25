@@ -352,7 +352,7 @@ a.tag:hover { text-decoration: none; background: var(--blue); color: #fff; }
 /* ── Mobile rhythm ───────────────────────── */
 @media (max-width: 680px) {
   .section { padding: 3.25rem 0; }
-  .hero { padding: 4.5rem 1.5rem 3.5rem; }
+  .hero { padding: 4rem 1.5rem 6rem; }
 }
 
 /* ── Session pages ───────────────────────── */
