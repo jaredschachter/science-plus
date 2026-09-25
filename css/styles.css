@@ -406,3 +406,11 @@ a.tag:hover { text-decoration: none; background: var(--blue); color: #fff; }
   .next-session__cta { flex-direction: row; align-items: center; justify-content: flex-start; }
   .next-session { margin-top: -3rem; }
 }
+
+/* ── Quotes on navy (home) ────────────────── */
+.section--dark .blockquote__text { color: #fff; }
+.section--dark .blockquote__attr { color: rgba(255,255,255,.65); }
+.section--dark .quote-dot { background: rgba(255,255,255,.28); }
+.section--dark .quote-dot.active { background: var(--gold); }
+.section--dark .section-hd p, .section--dark p[style] { color: rgba(255,255,255,.78) !important; }
+.session-detail .rsvp-box { margin-top: 1rem; }
