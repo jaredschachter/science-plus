@@ -1,10 +1,15 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/annabel",
-      "destination": "/sessions/2023-03-28-annabel-beichman"
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "science-plus.vercel.app" }],
+      "destination": "https://science-plus.ca/:path*",
+      "permanent": true
     }
+  ],
+  "rewrites": [
+    { "source": "/annabel", "destination": "/sessions/2023-03-28-annabel-beichman" }
   ]
 }
