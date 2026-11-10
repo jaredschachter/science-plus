@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://science-plus.ca/about</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://science-plus.ca/archive</loc><lastmod>2026-09-24</lastmod></url>
-  <url><loc>https://science-plus.ca/events</loc><lastmod>2026-09-24</lastmod></url>
-  <url><loc>https://science-plus.ca/</loc><lastmod>2026-09-24</lastmod></url>
+  <url><loc>https://science-plus.ca/events</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://science-plus.ca/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://science-plus.ca/moments</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://science-plus.ca/presenters</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://science-plus.ca/sessions/2023-03-28-annabel-beichman</loc><lastmod>2026-09-24</lastmod></url>
@@ -44,7 +44,7 @@
   <url><loc>https://science-plus.ca/sessions/kiley-hamlin</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://science-plus.ca/sessions/kumar-murty</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://science-plus.ca/sessions/lara-boyd</loc><lastmod>2026-09-24</lastmod></url>
-  <url><loc>https://science-plus.ca/sessions/larry-wasserman</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://science-plus.ca/sessions/larry-wasserman</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://science-plus.ca/sessions/lawrence-shipman</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://science-plus.ca/sessions/leonard-susskind</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://science-plus.ca/sessions/ludovic-van-waerbeke</loc><lastmod>2026-09-24</lastmod></url>
@@ -83,5 +83,5 @@
   <url><loc>https://science-plus.ca/sessions/tom-lin</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://science-plus.ca/sessions/viktor-toth</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://science-plus.ca/sessions/william-merrill</loc><lastmod>2026-09-24</lastmod></url>
-  <url><loc>https://science-plus.ca/stats</loc><lastmod>2026-09-24</lastmod></url>
+  <url><loc>https://science-plus.ca/stats</loc><lastmod>2026-11-09</lastmod></url>
 </urlset>
